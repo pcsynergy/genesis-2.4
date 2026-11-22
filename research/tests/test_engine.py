@@ -1,4 +1,3 @@
-import math
 import sys
 import unittest
 from pathlib import Path
@@ -15,7 +14,7 @@ class DimensionalFieldEngineTests(unittest.TestCase):
         graph = [[0, 1], [1, 0]]
         scalar = GraphFieldNetwork(graph, [2.0, 2.0], coupling=0.0)
         harmonic = PhaseOscillatorNetwork(graph, [0.0, 0.0], [0.0, 0.0], coupling=0.0)
-        tensor = TensorFieldNetwork(graph, [[1.0, 2.0], [3.0, 4.0]], (2,), coupling=0.0)
+        tensor = TensorFieldNetwork(graph, [[1.0, 2.0], [3.0, 4.0]], (2,), coupling=1.0)
         return scalar, harmonic, tensor
 
     def test_shared_topology_and_snapshot(self):
@@ -36,7 +35,6 @@ class DimensionalFieldEngineTests(unittest.TestCase):
         engine.step(0.1)
         self.assertAlmostEqual(harmonic.phases[0], 0.1)
         self.assertAlmostEqual(harmonic.phases[1], 0.1)
-        # The configured base frequencies are restored after each update.
         self.assertEqual(harmonic.natural_frequencies, [0.0, 0.0])
 
     def test_phase_coherence_drives_scalar_source(self):
