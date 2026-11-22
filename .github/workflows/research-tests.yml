@@ -28,3 +28,6 @@ jobs:
         run: python research/examples/two_node_demo.py
       - name: Run dimensional engine example
         run: python research/examples/dimensional_engine_demo.py
+
+      - name: Run variational potential example
+        run: python research/examples/variational_demo.py
