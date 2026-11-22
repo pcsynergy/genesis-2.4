@@ -1,0 +1,28 @@
+name: Research foundation tests
+
+on:
+  push:
+    paths:
+      - "research/**"
+      - ".github/workflows/research-tests.yml"
+  pull_request:
+    paths:
+      - "research/**"
+      - ".github/workflows/research-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run unit tests
+        run: python -m unittest discover -s research/tests -v
+      - name: Run two-node example
+        run: python research/examples/two_node_demo.py
