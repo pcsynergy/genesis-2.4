@@ -29,6 +29,7 @@ The arrow is a future integration possibility, not an implemented connection.
       README.md
       docs/
         ARCHITECTURE.md
+        DIMENSIONAL_ANALYSIS.md
         EXTENSIONS.md
         FOUNDATION.md
         FORMAL_SPECIFICATION.md
