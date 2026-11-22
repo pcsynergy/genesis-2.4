@@ -1,5 +1,5 @@
 """Experimental mathematical models for the GENESIS Research layer."""
-
+from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
-
-__all__ = ["GraphFieldNetwork"]
+from .tensor import TensorFieldNetwork
+__all__ = ["GraphFieldNetwork", "PhaseOscillatorNetwork", "TensorFieldNetwork"]
