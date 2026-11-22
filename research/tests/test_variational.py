@@ -20,6 +20,7 @@ class VariationalFieldSystemTests(unittest.TestCase):
             scalar_mass=0.1,
             tensor_mass=0.2,
             scalar_phase_coupling=0.3,
+            tensor_phase_coupling=0.2,
         )
 
     def test_gradient_matches_finite_difference(self):
