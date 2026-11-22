@@ -1,4 +1,10 @@
+import sys
 import unittest
+from pathlib import Path
+
+# Make the research package importable when unittest discovery starts at
+# research/tests from the repository root.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from one_time_field import GraphFieldNetwork
 
