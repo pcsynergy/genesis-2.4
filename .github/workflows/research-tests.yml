@@ -31,3 +31,5 @@ jobs:
 
       - name: Run variational potential example
         run: python research/examples/variational_demo.py
+      - name: Run Hamiltonian example
+        run: python research/examples/hamiltonian_demo.py
