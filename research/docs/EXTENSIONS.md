@@ -48,3 +48,30 @@ Important limitation: an array with multiple components is not automatically a g
 ## 5. Interpretation boundary
 
 Conservation, synchronization, and component-wise evolution are properties of these selected equations. They do not establish that nature uses this architecture, that time is a field, or that all known interactions reduce to one physical field. Physical claims require independent definitions, quantitative predictions, and empirical comparison.
+
+
+## 6. Shared-topology dimensional engine
+
+`DimensionalFieldEngine` composes the scalar, phase, and tensor-array reference models on one weighted graph. Every present model must have the exact same adjacency matrix. Each domain retains its own state representation and governing equation.
+
+The first prototype exposes two explicit cross-domain mappings. Let the scalar state be `phi`, the oscillator phases be `theta`, and the phase order parameter be `R):
+
+    omega_i,eff = omega_i + g_sf * mean(phi)
+    source_i,eff = source_i,base + g_fs * R
+
+The scalar mean shifts each oscillator's natural frequency by a uniform offset. Phase coherence contributes a uniform scalar source. The gains g_sf and g_fs are user-defined conversion parameters whose units must be selected for a particular experiment. They are not physical constants.
+
+At each time step, both signals are calculated from the pre-step state. Then all present submodels advance once. This defines a simultaneous explicit-Euler update scheme. It is not an exact integration of a continuous coupled system, and stability/convergence must be studied as the time step changes.
+
+The tensor-array domain currently shares the graph and advances independently. It has no cross-domain coupling yet. This is intentional: a coupling should be added only after its mathematical mapping, units, and intended interpretation are stated.
+
+### What the engine demonstrates
+
+- Heterogeneous state domains can share a common graph topology.
+- Distinct update laws can be composed without pretending that all state components are the same kind of quantity.
+- Cross-domain effects can be introduced as explicit, testable model assumptions.
+- A detached snapshot/history can record the combined state for later analysis.
+
+### What it does not demonstrate
+
+The engine does not derive a unique unified field equation, establish that time is a physical field, or show that scalar, vector, tensor, and phase variables are interchangeable. It is a modular computational architecture. A physical interpretation requires a dimensional analysis, transformation laws where appropriate, independent predictions, and comparison with observations.
