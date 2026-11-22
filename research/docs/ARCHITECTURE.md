@@ -41,6 +41,7 @@ The arrow is a future integration possibility, not an implemented connection.
         tensor.py
         engine.py
         variational.py
+        hamiltonian.py
       examples/
         two_node_demo.py
       tests/
@@ -48,6 +49,7 @@ The arrow is a future integration possibility, not an implemented connection.
         test_extensions.py
         test_engine.py
         test_variational.py
+        test_hamiltonian.py
 
 ## 4. Responsibilities
 
@@ -57,6 +59,7 @@ The arrow is a future integration possibility, not an implemented connection.
 - tensor.py: component-wise graph diffusion for fixed-shape arrays.
 - engine.py: composition of present state domains on one shared graph and explicitly declared cross-domain mappings.
 - variational.py: a shared dimensionless potential functional with mobility-weighted gradient flow for scalar, phase, and tensor-array states.
+- hamiltonian.py: canonical conservative dynamics using the shared potential, diagonal inertias, and velocity-Verlet integration.
 - examples/: runnable demonstrations.
 - tests/: invariant, validation, regression, and numerical convergence tests.
 
