@@ -16,7 +16,8 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/tensor.py — component-wise tensor-array graph diffusion prototype.
 - one_time_field/engine.py — dimensional engine composing the models on one shared graph with two explicit cross-domain coupling rules.
 - one_time_field/variational.py — shared dimensionless potential functional coupling scalar, phase, and tensor-array states through gradient flow.
-- tests/ — invariant, validation, extension, dimensional-engine, and variational-gradient tests.
+- one_time_field/hamiltonian.py — canonical conservative dynamics using velocity-Verlet integration and the shared potential.
+- tests/ — invariant, validation, extension, dimensional-engine, variational-gradient, and Hamiltonian tests.
 - examples/two_node_demo.py — runnable scalar example.
 
 ## Run
@@ -26,6 +27,7 @@ Requires Python 3.10 or newer.
     python research/examples/two_node_demo.py
     python research/examples/dimensional_engine_demo.py
     python research/examples/variational_demo.py
+    python research/examples/hamiltonian_demo.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. The tensor prototype does not define geometric tensor transformation laws. The dimensional engine is a software composition of distinct equations. The variational prototype couples them through a chosen dimensionless functional, but does not derive a unique fundamental field equation. Cross-domain gains are user-defined modeling parameters, not measured physical constants. Numerical patterns are not proof of a physical mechanism.
