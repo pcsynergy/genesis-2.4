@@ -8,6 +8,7 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - [Formal specification](docs/FORMAL_SPECIFICATION.md)
 - [Extensions](docs/EXTENSIONS.md) — conservation, harmonic oscillators, tensor-array states, the shared-topology dimensional engine, and a variational common-potential prototype.
 - [Dimensional analysis and symmetry](docs/DIMENSIONAL_ANALYSIS.md) — reference scales, mobility units, and conditional conservation results.
+- [Action, Lagrangian, and Hamiltonian formulations](docs/ACTION_PRINCIPLE.md) — conservative and dissipative alternatives built from the shared potential.
 
 ## Implemented models
 - one_time_field/network.py — scalar graph diffusion with decay and external source.
