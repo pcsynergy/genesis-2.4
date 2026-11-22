@@ -163,9 +163,9 @@ Without these choices, there is no unique action to derive from V. Many inequiva
 
 ## 10. Recommended staged implementation
 
-**Stage 1 — finite-dimensional conservative reference.** Implement a separate `HamiltonianFieldSystem` with constant diagonal positive inertia, the existing V and analytic gradient, and canonical q,p stepping. Keep it separate from `VariationalFieldSystem`.
+**Stage 1 — finite-dimensional conservative reference (implemented prototype).** A separate `HamiltonianFieldSystem` uses constant diagonal positive inertia, the existing V and analytic gradient, and canonical q,p stepping with velocity-Verlet integration. Keep it separate from `VariationalFieldSystem`.
 
-**Stage 2 — validation.** Test Hamilton's equations against finite differences, verify energy conservation under a symplectic integrator as the step is refined, and verify time-reversal behavior in the undamped system.
+**Stage 2 — validation (initial tests implemented).** Tests cover bounded energy error for a harmonic oscillator, time-reversal behavior, finite energy in a coupled multi-domain case, and input validation. Further step-size convergence and long-time drift studies remain open.
 
 **Stage 3 — Rayleigh damping.** Add an explicitly declared positive-semidefinite damping matrix and verify the predicted energy dissipation.
 
