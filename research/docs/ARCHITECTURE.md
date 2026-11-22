@@ -30,6 +30,7 @@ The arrow is a future integration possibility, not an implemented connection.
       docs/
         ARCHITECTURE.md
         DIMENSIONAL_ANALYSIS.md
+        ACTION_PRINCIPLE.md
         EXTENSIONS.md
         FOUNDATION.md
         FORMAL_SPECIFICATION.md
