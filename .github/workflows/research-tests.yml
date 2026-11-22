@@ -26,3 +26,5 @@ jobs:
         run: python -m unittest discover -s research/tests -v
       - name: Run two-node example
         run: python research/examples/two_node_demo.py
+      - name: Run dimensional engine example
+        run: python research/examples/dimensional_engine_demo.py
