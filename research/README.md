@@ -8,9 +8,14 @@ A graph of interacting field states: each node has a scalar state phi_i(t), edge
 
 The first implementation is a graph-coupled scalar-field toy model. It is a mathematical sandbox, not a validated physical field theory and not evidence for One Time Field Theory.
 
+## Specifications
+
+- [Architecture](docs/ARCHITECTURE.md) — component boundaries, data flow, testing, and future simulator interoperability.
+- [Foundation](docs/FOUNDATION.md) — definitions, assumptions, equations, and initial validation plan.
+- [Formal specification](docs/FORMAL_SPECIFICATION.md) — baseline axioms, governing dynamics, boundary conditions, derived properties, and testable predictions.
+
 ## Layout
 
-- docs/FOUNDATION.md — definitions, assumptions, equations, and validation plan.
 - one_time_field/network.py — dependency-free reference implementation.
 - tests/test_network.py — unit tests.
 - examples/two_node_demo.py — runnable example.
