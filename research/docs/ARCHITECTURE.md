@@ -1,4 +1,4 @@
-# GENESIS Research Architecture — Draft 0.4
+# GENESIS Research Architecture — Draft 0.5
 
 ## 1. Architectural goal
 
@@ -17,6 +17,7 @@ The research layer is an adjacent Python package. It is not a replacement for GE
       mathematical specifications
       scalar, phase, and tensor-array reference models
       shared-topology dimensional engine
+      variational common-potential prototype
       numerical experiments and validation
       future visualization
 
@@ -37,12 +38,14 @@ The arrow is a future integration possibility, not an implemented connection.
         harmonic.py
         tensor.py
         engine.py
+        variational.py
       examples/
         two_node_demo.py
       tests/
         test_network.py
         test_extensions.py
         test_engine.py
+        test_variational.py
 
 ## 4. Responsibilities
 
@@ -51,6 +54,7 @@ The arrow is a future integration possibility, not an implemented connection.
 - harmonic.py: nonlinear phase synchronization.
 - tensor.py: component-wise graph diffusion for fixed-shape arrays.
 - engine.py: composition of present state domains on one shared graph and explicitly declared cross-domain mappings.
+- variational.py: a shared dimensionless potential functional with mobility-weighted gradient flow for scalar, phase, and tensor-array states.
 - examples/: runnable demonstrations.
 - tests/: invariant, validation, regression, and numerical convergence tests.
 
@@ -83,11 +87,17 @@ All cross-domain signals are calculated from the pre-step snapshot. Each present
 
 No external datasets, network calls, or GENESIS runtime state are required.
 
-## 7. Numerical responsibilities
+## 7. Variational potential layer
+
+The variational prototype is separate from the modular dimensional engine. It defines one dimensionless functional over the currently implemented scalar, phase, and tensor-array coordinates. Each domain follows its own mobility-weighted negative gradient. Relative phase modulates scalar and tensor graph penalties, while scalar and tensor differences feed back into the phase gradient. Natural-frequency forcing is an external drive and removes the guarantee of monotonic potential decrease.
+
+This is a chosen model functional, not a derived physical law. Reference scales and units are required before interpreting it as physical energy. Tensor components still lack geometric transformation laws.
+
+## 8. Numerical responsibilities
 
 Document solver order, time-step restrictions, convergence behavior, floating-point assumptions, reproducibility, and failure modes. Future solver options should be compared against analytic solutions or trusted numerical references. Explicit Euler stability must be investigated for each coupled configuration.
 
-## 8. Testing strategy
+## 9. Testing strategy
 
 - Unit tests: dimensions, parameter domains, deterministic stepping.
 - Invariant tests: mean conservation and dissipation in applicable limits.
@@ -99,13 +109,13 @@ Document solver order, time-step restrictions, convergence behavior, floating-po
 
 Passing software tests validates only the tested implementation behavior, not a physical interpretation.
 
-## 9. Future GENESIS interoperability
+## 10. Future GENESIS interoperability
 
 Do not couple research code directly to private simulator internals. If integration becomes useful, define a versioned interchange format and adapter with explicit units and metadata, stable identifiers, declared sampling interval, missing-data behavior, and round-trip compatibility tests.
 
 The first adapter should be read-only and offline. Any simulator modifications require separate review and regression testing.
 
-## 10. Development stages
+## 11. Development stages
 
 - Stage A: formal scalar network baseline.
 - Stage B: stronger numerical validation and time-dependent forcing.
