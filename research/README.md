@@ -21,6 +21,7 @@ Requires Python 3.10 or newer.
 
     python -m unittest discover -s research/tests -v
     python research/examples/two_node_demo.py
+    python research/examples/dimensional_engine_demo.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. The tensor prototype does not define geometric tensor transformation laws. The dimensional engine is a software composition of distinct equations, not a derivation of a single fundamental field equation. Cross-domain gains are user-defined modeling parameters, not measured physical constants. Numerical patterns are not proof of a physical mechanism.
