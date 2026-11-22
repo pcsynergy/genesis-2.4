@@ -22,7 +22,8 @@ class VariationalFieldSystem:
               g_s*(x_i-x_j)^2
             + g_t*||T_i-T_j||^2
             + 2*g_h*(1-cos(theta_i-theta_j))
-            + lambda*(x_i-x_j)^2*(1-cos(theta_i-theta_j))
+            + lambda_s*(x_i-x_j)^2*(1-cos(theta_i-theta_j))
+            + lambda_t*||T_i-T_j||^2*(1-cos(theta_i-theta_j))
           )
 
     Each state follows its own gradient flow with its own positive mobility.
@@ -40,6 +41,7 @@ class VariationalFieldSystem:
     scalar_mass: float = 0.0
     tensor_mass: float = 0.0
     scalar_phase_coupling: float = 0.0
+    tensor_phase_coupling: float = 0.0
     scalar_mobility: float = 1.0
     phase_mobility: float = 1.0
     tensor_mobility: float = 1.0
@@ -83,7 +85,7 @@ class VariationalFieldSystem:
         coefficients = (
             "scalar_gradient", "phase_gradient", "tensor_gradient",
             "scalar_mass", "tensor_mass", "scalar_phase_coupling",
-            "scalar_mobility", "phase_mobility", "tensor_mobility",
+            "tensor_phase_coupling", "scalar_mobility", "phase_mobility", "tensor_mobility",
         )
         for name in coefficients:
             value = getattr(self, name)
@@ -134,6 +136,8 @@ class VariationalFieldSystem:
                 if self.tensor is not None:
                     dt = sum((a-b)**2 for a, b in zip(self.tensor[i], self.tensor[j]))
                     value += 0.5 * weight * self.tensor_gradient * dt
+                    if self.phases is not None:
+                        value += 0.5 * weight * self.tensor_phase_coupling * dt * phase_factor
                 if self.phases is not None:
                     value += weight * self.phase_gradient * phase_factor
         return value
@@ -161,9 +165,14 @@ class VariationalFieldSystem:
                 for j in range(self.node_count):
                     if i == j:
                         continue
+                    phase_factor = (
+                        1.0 - cos(self.phases[i] - self.phases[j])
+                        if self.phases is not None else 0.0
+                    )
+                    coefficient = self.tensor_gradient + self.tensor_phase_coupling * phase_factor
                     for k in range(len(self.tensor[i])):
                         grad[i][k] += (
-                            self.adjacency[i][j] * self.tensor_gradient
+                            self.adjacency[i][j] * coefficient
                             * (self.tensor[i][k] - self.tensor[j][k])
                         )
             result["tensor"] = grad
@@ -179,6 +188,11 @@ class VariationalFieldSystem:
                     if self.scalar is not None:
                         dx = self.scalar[i] - self.scalar[j]
                         coefficient += 0.5 * self.scalar_phase_coupling * dx*dx
+                    if self.tensor is not None:
+                        d_tensor_sq = sum(
+                            (a-b)**2 for a, b in zip(self.tensor[i], self.tensor[j])
+                        )
+                        coefficient += 0.5 * self.tensor_phase_coupling * d_tensor_sq
                     grad[i] += self.adjacency[i][j] * coefficient * sin(delta)
             result["phases"] = grad
         return result
