@@ -10,7 +10,7 @@ model, rather than through the externally injected source used in Experiment 3?
 Let q collect the existing scalar, phase, and tensor-array generalized
 coordinates, with scalar coordinates x_i. Define the scalar-field observable
 
-    C(x) = 1/2 * sum_i x_i^2.
+    C(x) = 1/2 * sum_i x_i^2 / (1 + x_i^2).
 
 Introduce a clock coordinate T with positive inertia I_T and restoring
 coefficient kappa. The augmented Lagrangian is
@@ -28,7 +28,7 @@ The Euler–Lagrange equations for constant diagonal field inertia M are
     M qddot = -grad_q V(q) + g T grad_q C(x)
     I_T Tddot = -kappa T + g C(x).
 
-For the scalar coordinates, partial C / partial x_i = x_i. Other field
+For the scalar coordinates, partial C / partial x_i = x_i / (1 + x_i^2)^2. The bounded observable keeps the clock–field interaction potential bounded below for positive clock stiffness, avoiding an unbounded cubic coupling. Other field
 coordinates receive no direct coupling in this first prototype, though they
 may remain coupled through V(q).
 
