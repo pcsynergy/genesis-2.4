@@ -1,5 +1,11 @@
 """Run Experiment 9: Lorentz-covariant scalar/clock field checks."""
+from pathlib import Path
+import sys
 import unittest
+
+# When invoked as a script, Python places research/examples on sys.path.
+# Add the repository root so the research namespace package is importable.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from research.tests.test_lorentz_covariant import LorentzCovarianceTests
 
