@@ -7,6 +7,9 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - [UPT–OTFT Integration 0.1](docs/UPT_OTFT_INTEGRATION.md) — maps UPT onto the existing GENESIS research architecture and cosmological model without changing the validated equations or overstating physical claims.
 - [UPT Configuration-Space Formalization 0.1](docs/UPT_CONFIGURATION_SPACE.md) — defines model admissibility, constraints, relations, actualization, equivalence, and observables.
 
+## UPT experiments
+- [UPT-3: Two-Component Relational Unity Experiment](docs/UPT_THREE_EXPERIMENT.md) — exact two-node graph-coupling model, common/difference modes, analytic solution, and software tests.
+
 ## Research reports
 - [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
 - [Experiment 14 protocol](docs/COSMOLOGICAL_EVOLUTION_EXPERIMENT.md) — equations, numerical method, tests, and limitations.
