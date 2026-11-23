@@ -35,7 +35,6 @@ jobs:
         run: python research/examples/dynamics_comparison_demo.py
       - name: Run dynamics timestep convergence study
         run: python research/examples/dynamics_convergence_study.py
-
       - name: Run coupled multi-domain network regimes
         run: python research/examples/coupled_network_regimes.py
       - name: Run temporal clock demonstration
@@ -64,3 +63,5 @@ jobs:
         run: python research/examples/stress_energy_experiment.py
       - name: Run 3+1 Minkowski covariance and stress-energy experiment
         run: python research/examples/minkowski_3plus1_experiment.py
+      - name: Run prescribed-FLRW curved-background experiment
+        run: python research/examples/flrw_curved_experiment.py
