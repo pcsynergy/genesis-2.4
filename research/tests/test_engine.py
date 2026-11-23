@@ -66,6 +66,22 @@ class DimensionalFieldEngineTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             DimensionalFieldEngine(scalar=scalar, scalar_to_phase_gain=1.0)
 
+    def test_external_scalar_source_is_additive(self):
+        graph = [[0, 1], [1, 0]]
+        scalar = GraphFieldNetwork(graph, [0.0, 0.0], coupling=0.0)
+        harmonic = PhaseOscillatorNetwork(graph, [0.0, 0.0], [0.0, 0.0], coupling=0.0)
+        engine = DimensionalFieldEngine(
+            scalar=scalar, harmonic=harmonic, coherence_to_scalar_gain=2.0
+        )
+        engine.step(0.1, scalar_external_source=[1.0, 0.5])
+        self.assertAlmostEqual(scalar.state[0], 0.3)
+        self.assertAlmostEqual(scalar.state[1], 0.25)
+
+    def test_invalid_external_scalar_source_is_rejected(self):
+        engine = DimensionalFieldEngine(scalar=GraphFieldNetwork([[0, 1], [1, 0]], [0, 0]))
+        with self.assertRaises(ValueError):
+            engine.step(0.1, scalar_external_source=[1.0])
+
     def test_invalid_time_step_is_rejected(self):
         engine = DimensionalFieldEngine(scalar=GraphFieldNetwork([[0]], [1]))
         with self.assertRaises(ValueError):
