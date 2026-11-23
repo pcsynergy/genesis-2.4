@@ -5,6 +5,7 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 ## Unified Potential Theory integration
 - [UPT Foundational Specification 0.1](docs/UPT_FOUNDATION.md) — Potential → One → Both → Many → All → Becoming → renewed Potential; defines ontological Potential separately from model potential energy.
 - [UPT–OTFT Integration 0.1](docs/UPT_OTFT_INTEGRATION.md) — maps UPT onto the existing GENESIS research architecture and cosmological model without changing the validated equations or overstating physical claims.
+- [UPT Configuration-Space Formalization 0.1](docs/UPT_CONFIGURATION_SPACE.md) — defines model admissibility, constraints, relations, actualization, equivalence, and observables.
 
 ## Research reports
 - [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
