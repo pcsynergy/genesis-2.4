@@ -19,10 +19,12 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/temporal_comparison.py — paired external-time and relational-time integration using the chain-rule reparameterization.
 - one_time_field/temporal_coupling.py — explicit delayed feedback from a field-derived clock rate into scalar-field dynamics.
 - one_time_field/feedback_convergence.py — Experiment 4 timestep refinement and feedback-strength sensitivity study.
+- one_time_field/clock_action.py — Experiment 5 augmented Lagrangian/Hamiltonian with a dynamical clock coordinate coupled to scalar-field amplitude.
 - docs/FIELD_DERIVED_ACTIVITY.md — Experiment 1 procedure, assumptions, and interpretation limits.
 - docs/TEMPORAL_TIME_COMPARISON_EXPERIMENT.md — Experiment 2 paired-clock comparison and interpretation limits.
 - docs/FIELD_CLOCK_FEEDBACK_EXPERIMENT.md — Experiment 3 field–clock feedback hypothesis and interpretation limits.
 - docs/FEEDBACK_CONVERGENCE_EXPERIMENT.md — Experiment 4 numerical refinement and parameter sensitivity protocol.
+- docs/CLOCK_ACTION_EXPERIMENT.md — Experiment 5 action-derived clock–field interaction and interpretation limits.
 - one_time_field/variational.py — shared dimensionless potential functional and gradient flow.
 - one_time_field/hamiltonian.py — canonical conservative dynamics using velocity-Verlet.
 - one_time_field/damped.py — Rayleigh-damped Hamiltonian dynamics using symmetric damping/Verlet operator splitting.
@@ -37,6 +39,7 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - examples/temporal_time_comparison.py — compares external and relational time on identical initial field states.
 - examples/temporal_coupling_experiment.py — compares a control system with explicit clock-to-field feedback.
 - examples/feedback_convergence_experiment.py — timestep refinement and feedback-strength sweep.
+- examples/clock_action_experiment.py — conservative dynamical-clock coupling demonstration.
 - examples/dynamics_comparison_demo.py — same-initial-state comparison of three dynamics regimes.
 - examples/dynamics_convergence_study.py — analytic-reference timestep study with state errors, energy drift, and damping-balance residuals.
 - examples/coupled_network_regimes.py — three-node scalar/phase/tensor-array network comparison across gradient, Hamiltonian, and damped dynamics.
