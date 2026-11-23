@@ -139,3 +139,18 @@ The output reports:
 The explicit-Euler gradient-flow method is expected to converge at first order. Velocity-Verlet and the symmetric damping/Verlet split are expected to show second-order state accuracy in this smooth oscillator test. The balance residual also contains quadrature error from the trapezoidal dissipation estimate. These are numerical-order expectations for this test problem, not physical predictions of One Time Field Theory.
 
 The tests require errors to decrease as dt is refined and check a conservative second-order signature. The full study is also run in CI. Before extrapolating to coupled or higher-dimensional models, repeat convergence tests there and report sensitivity to graph topology, coupling coefficients, inertias, and damping.
+
+
+## 12. Coupled three-node, three-domain regime experiment
+
+`coupled_network_regimes.py` places scalar coordinates, phase coordinates, and two-component tensor arrays on the same three-node chain graph. All three dynamics instances begin from identical generalized coordinates and canonical momenta and use the same dimensionless potential, including scalar–phase and tensor–phase cross terms.
+
+The experiment compares:
+
+- Gradient flow: the shared potential should relax for a sufficiently resolved explicit-Euler step.
+- Hamiltonian dynamics: total dimensionless H should remain near its initial value, with bounded integration drift under velocity-Verlet.
+- Rayleigh-damped Hamiltonian dynamics: total H should decrease over a resolved trajectory, subject to the numerical splitting error.
+
+The CSV reports potential/total energies, phase order parameter, and scalar-state norms. The associated tests check that cross terms alter gradients in all three domains, the gradient-flow potential decreases, conservative energy drift is bounded, and damping lowers total energy.
+
+This is a multi-node mathematical integration test of the selected finite-dimensional model. The tensor entries remain component arrays, not geometric tensors; all coefficients and state values are dimensionless illustrative parameters. It supplies no empirical evidence that physical fields obey this functional.
