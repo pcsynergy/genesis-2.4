@@ -6,6 +6,7 @@ from .field_activity import FieldActivity
 from .hamiltonian import HamiltonianFieldSystem
 from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
+from .two_node_relational import TwoNodeRelationalModel
 from .tensor import TensorFieldNetwork
 from .unified_action import UnifiedClockActionSystem
 from .temporal import TemporalLayer
@@ -24,6 +25,7 @@ __all__ = [
     "DimensionalFieldEngine",
     "FieldActivity",
     "GraphFieldNetwork",
+    "TwoNodeRelationalModel",
     "HamiltonianFieldSystem",
     "PhaseOscillatorNetwork",
     "TensorFieldNetwork",
