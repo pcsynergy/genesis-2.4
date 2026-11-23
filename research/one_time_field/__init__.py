@@ -6,7 +6,11 @@ from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
 from .tensor import TensorFieldNetwork
 from .temporal import TemporalLayer
-from .temporal_models import (\n    EntropyProductionClock, EventClock, ExternalClock, HybridClock,\n    ObserverClock, RelationalClock,\n)\nfrom .variational import VariationalFieldSystem
+from .temporal_models import (
+    EntropyProductionClock, EventClock, ExternalClock, HybridClock,
+    ObserverClock, RelationalClock,
+)
+from .variational import VariationalFieldSystem
 
 __all__ = [
     "DampedHamiltonianFieldSystem",
