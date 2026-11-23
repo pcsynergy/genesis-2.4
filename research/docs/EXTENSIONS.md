@@ -1,4 +1,4 @@
-# Research Extensions — Draft 0.3
+# Research Extensions — Draft 0.4
 
 ## 1. Conservation and dissipation
 
@@ -49,39 +49,22 @@ Important limitation: an array with multiple components is not automatically a g
 
 Conservation, synchronization, and component-wise evolution are properties of these selected equations. They do not establish that nature uses this architecture, that time is a field, or that all known interactions reduce to one physical field. Physical claims require independent definitions, quantitative predictions, and empirical comparison.
 
-
 ## 6. Shared-topology dimensional engine
 
 `DimensionalFieldEngine` composes the scalar, phase, and tensor-array reference models on one weighted graph. Every present model must have the exact same adjacency matrix. Each domain retains its own state representation and governing equation.
 
-The first prototype exposes two explicit cross-domain mappings. Let the scalar state be `phi`, the oscillator phases be `theta`, and the phase order parameter be `R):
+The first prototype exposes two explicit cross-domain mappings. Let the scalar state be `phi`, the oscillator phases be `theta`, and the phase order parameter be `R`:
 
     omega_i,eff = omega_i + g_sf * mean(phi)
     source_i,eff = source_i,base + g_fs * R
 
-The scalar mean shifts each oscillator's natural frequency by a uniform offset. Phase coherence contributes a uniform scalar source. The gains g_sf and g_fs are user-defined conversion parameters whose units must be selected for a particular experiment. They are not physical constants.
+The scalar mean shifts each oscillator's natural frequency by a uniform offset. Phase coherence contributes a uniform scalar source. The gains are user-defined conversion parameters, not physical constants.
 
 At each time step, both signals are calculated from the pre-step state. Then all present submodels advance once. This defines a simultaneous explicit-Euler update scheme. It is not an exact integration of a continuous coupled system, and stability/convergence must be studied as the time step changes.
 
-The tensor-array domain currently shares the graph and advances independently. It has no cross-domain coupling yet. This is intentional: a coupling should be added only after its mathematical mapping, units, and intended interpretation are stated.
-
-### What the engine demonstrates
-
-- Heterogeneous state domains can share a common graph topology.
-- Distinct update laws can be composed without pretending that all state components are the same kind of quantity.
-- Cross-domain effects can be introduced as explicit, testable model assumptions.
-- A detached snapshot/history can record the combined state for later analysis.
-
-### What it does not demonstrate
-
-The engine does not derive a unique unified field equation, establish that time is a physical field, or show that scalar, vector, tensor, and phase variables are interchangeable. It is a modular computational architecture. A physical interpretation requires a dimensional analysis, transformation laws where appropriate, independent predictions, and comparison with observations.
-
-
 ## 7. Shared variational potential prototype
 
-`VariationalFieldSystem` is a second architecture, distinct from the earlier modular dimensional engine. It asks whether scalar, phase, and tensor-array states can be evolved from one common dimensionless potential functional.
-
-For normalized scalar coordinates x_i, phase coordinates theta_i, and tensor-component arrays T_i, define
+`VariationalFieldSystem` defines a common dimensionless functional over normalized scalar coordinates x_i, phase coordinates theta_i, and tensor-component arrays T_i:
 
     V = 1/2*m_s*sum_i x_i^2
       + 1/2*m_t*sum_i ||T_i||^2
@@ -93,46 +76,49 @@ For normalized scalar coordinates x_i, phase coordinates theta_i, and tensor-com
           + lambda_t*||T_i-T_j||^2*(1-cos(theta_i-theta_j))
         ]
 
-Terms for absent state domains are omitted. The lambda_s and lambda_t terms make the scalar and tensor graph penalties depend on relative phase. Conversely, their state differences modify the phase gradient. Thus the three state domains are coupled through a single scalar functional while retaining distinct coordinates.
+Terms for absent domains are omitted. The cross terms couple scalar, phase, and tensor-array coordinates through one selected functional.
 
-The deterministic, undriven evolution is a mobility-weighted gradient flow:
+The undriven gradient flow is:
 
     dx/dtau       = -mu_s * partial(V)/partial(x)
     dtheta/dtau   = -mu_h * partial(V)/partial(theta)
     dT/dtau       = -mu_t * partial(V)/partial(T)
 
-Optional natural phase frequencies add an external drive to the phase equation. In that driven case V is not generally a Lyapunov function and need not decrease monotonically.
-
-### Mathematical interpretation
-
-For positive mobilities and exact continuous-time gradient flow with no external drive,
+For positive mobilities and exact continuous-time flow with no external drive:
 
     dV/dtau = -mu_s*||grad_x V||^2
               -mu_h*||grad_theta V||^2
               -mu_t*||grad_T V||^2 <= 0
 
-with absent-domain terms omitted. This is a consequence of the chosen gradient-flow construction, not a discovery about physical energy conservation. Explicit Euler only approximates this behavior and requires time-step convergence and stability tests.
-
-All coordinates are normalized and dimensionless in this prototype. To interpret V as a physical energy, one must specify reference scales, units, and a justified mapping to observables. The coefficients are model parameters, not measured constants. The tensor state remains a component array, not a geometric tensor with transformation laws.
-
-### What this prototype tests
-
-- Whether several state domains can be coupled by one well-defined functional.
-- Whether the implemented gradients match numerical finite differences.
-- Whether undriven gradient flow reduces the functional for sufficiently small time steps.
-- Whether the phase sector respects global phase-shift symmetry.
-
-It does not establish that the universe is governed by this functional, that the functional is unique, or that its coordinates represent fundamental physical fields.
-
+This is a consequence of the chosen gradient-flow construction, not a discovery about physical energy conservation. Explicit Euler requires time-step stability and convergence checks.
 
 ## 8. Hamiltonian conservative prototype
 
-`HamiltonianFieldSystem` reuses the dimensionless functional from `VariationalFieldSystem` as a candidate potential and adds canonical momenta with positive diagonal inertias:
+`HamiltonianFieldSystem` reuses V as a candidate potential and adds canonical momenta with positive diagonal inertias:
 
     H(q,p) = sum_a p_a^2/(2*m_a) + V(q)
 
-It advances the separable Hamiltonian with velocity-Verlet (a symplectic, time-reversible method for this autonomous system). The model deliberately rejects the variational prototype's natural-frequency drive: such a drive is not generated by the stated autonomous Hamiltonian. A future externally driven Hamiltonian must declare its time dependence or canonical forcing explicitly.
+It advances this separable autonomous Hamiltonian with velocity-Verlet. Natural-frequency forcing is rejected because it is not generated by the stated Hamiltonian. Inertias are dimensionless model parameters; V is not established physical energy.
 
-The implementation keeps scalar, phase, and tensor-array coordinate blocks distinct. Phase coordinates are wrapped modulo 2*pi after position updates; canonical momenta remain unwrapped. Energy checks must therefore compare the periodic potential and kinetic energy, not infer momentum from wrapped phase values.
+## 9. Rayleigh-damped Hamiltonian prototype
 
-This remains a finite-dimensional mathematical prototype. Inertia values are dimensionless model parameters, and V is not established physical energy. The Hamiltonian tests target bounded energy error for a harmonic oscillator, time reversibility, finite energy in a coupled multi-domain example, and input validation. These tests validate the numerical implementation only.
+`DampedHamiltonianFieldSystem` adds linear friction to each generalized coordinate block:
+
+    q_dot_a = p_a / m_a
+    p_dot_a = -partial(V)/partial(q_a) - gamma_a*p_a
+
+For nonnegative damping coefficients gamma_a, the continuous energy balance is:
+
+    dH/dt = -sum_a gamma_a * ||p_a||^2/m_a <= 0
+
+The implementation uses symmetric operator splitting: exact half-step exponential momentum damping, one conservative velocity-Verlet step, then a second exact half-step damping. This is a second-order split integrator. The continuous energy law is exact for the stated differential equations; the discrete trajectory can show small energy fluctuations from the conservative integrator, so tests assess resolved long-run energy reduction rather than requiring strict per-step monotonicity.
+
+## 10. Three-regime comparison experiment
+
+`dynamics_comparison_demo.py` initializes three independent copies of the same one-coordinate quadratic potential, with the same initial coordinate and zero initial momentum:
+
+- Gradient flow: `q_dot = -dV/dq`. It relaxes toward the minimum without inertial oscillation.
+- Hamiltonian: `q_dot=p/m`, `p_dot=-dV/dq`. It oscillates while the ideal continuous Hamiltonian is conserved.
+- Rayleigh damped: `q_dot=p/m`, `p_dot=-dV/dq-gamma*p`. It oscillates while losing energy to the modeled friction.
+
+The demo emits CSV time series of coordinate and energy values. It is a controlled numerical comparison of three equations built from the same V, not evidence that the three regimes are all present in nature or that V is a physical energy. A follow-up study should vary dt, inertia, and damping; compare trajectories at matched physical/dimensionless times; and report convergence and energy-balance residuals.
