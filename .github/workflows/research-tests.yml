@@ -58,3 +58,5 @@ jobs:
         run: python research/examples/continuum_action_experiment.py
       - name: Run local clock-field refinement experiment
         run: python research/examples/local_clock_field_experiment.py
+      - name: Run Lorentz-covariant scalar-clock field tests
+        run: python research/examples/lorentz_covariant_experiment.py
