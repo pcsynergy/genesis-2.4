@@ -64,7 +64,7 @@ The declared model observable is the disagreement
 D(x)=\sum_i(x_i-\bar x)^2.
 \]
 
-For two nodes initialized at \((0,2)\), the coupled model uses \(\kappa=0.5\), while the baseline uses \(\kappa=0\). With \(\Delta t=0.01\) for 200 steps, the baseline retains its initial disagreement \(D=2\). The coupled model approaches consensus and its disagreement falls below \(10^{-6}\).
+For two nodes initialized at \((0,2)\), the coupled model uses \(\kappa=0.5\), while the baseline uses \(\kappa=0\). With \(\Delta t=0.01\) for 1,000 steps (model time 10), the baseline retains its initial disagreement \(D=2\). The coupled model approaches consensus and its disagreement falls below \(10^{-6}\).
 
 This is a clear prediction *within the toy model*: nonzero symmetric coupling suppresses disagreement, whereas the uncoupled baseline does not. It is not yet a prediction about a physical system. To become empirical, the states, coupling, time scale, and disagreement observable would need an independently justified mapping to measurable quantities, followed by comparison with real data and uncertainty estimates.
 
