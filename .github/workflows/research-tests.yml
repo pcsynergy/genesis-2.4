@@ -1,0 +1,73 @@
+name: Research foundation tests
+
+on:
+  push:
+    paths:
+      - "research/**"
+      - ".github/workflows/research-tests.yml"
+  pull_request:
+    paths:
+      - "research/**"
+      - ".github/workflows/research-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run unit tests
+        run: python -m unittest discover -s research/tests -v
+      - name: Run two-node example
+        run: python research/examples/two_node_demo.py
+      - name: Run dimensional engine example
+        run: python research/examples/dimensional_engine_demo.py
+      - name: Run variational potential example
+        run: python research/examples/variational_demo.py
+      - name: Run Hamiltonian example
+        run: python research/examples/hamiltonian_demo.py
+      - name: Run three-regime dynamics comparison
+        run: python research/examples/dynamics_comparison_demo.py
+      - name: Run dynamics timestep convergence study
+        run: python research/examples/dynamics_convergence_study.py
+      - name: Run coupled multi-domain network regimes
+        run: python research/examples/coupled_network_regimes.py
+      - name: Run temporal clock demonstration
+        run: python research/examples/temporal_clock_demo.py
+      - name: Run comparative temporal models
+        run: python research/examples/temporal_models_demo.py
+      - name: Run field-derived temporal activity experiment
+        run: python research/examples/field_derived_activity_experiment.py
+      - name: Run external versus relational time comparison
+        run: python research/examples/temporal_time_comparison.py
+      - name: Run explicit field-clock feedback experiment
+        run: python research/examples/temporal_coupling_experiment.py
+      - name: Run feedback convergence and strength sweep
+        run: python research/examples/feedback_convergence_experiment.py
+      - name: Run action-derived clock-field coupling experiment
+        run: python research/examples/clock_action_experiment.py
+      - name: Run unified shared field action experiment
+        run: python research/examples/unified_action_experiment.py
+      - name: Run continuum-field refinement experiment
+        run: python research/examples/continuum_action_experiment.py
+      - name: Run local clock-field refinement experiment
+        run: python research/examples/local_clock_field_experiment.py
+      - name: Run Lorentz-covariant scalar-clock field tests
+        run: python research/examples/lorentz_covariant_experiment.py
+      - name: Run stress-energy conservation experiment
+        run: python research/examples/stress_energy_experiment.py
+      - name: Run 3+1 Minkowski covariance and stress-energy experiment
+        run: python research/examples/minkowski_3plus1_experiment.py
+      - name: Run prescribed-FLRW curved-background experiment
+        run: python research/examples/flrw_curved_experiment.py
+      - name: Run metric variation and dynamical FLRW gravity experiment
+        run: python research/examples/gravitational_flrw_experiment.py
+      - name: Run coupled cosmological evolution experiment
+        run: python research/examples/cosmological_evolution_experiment.py
+      - name: Run UPT-6 Noether and continuum probe
+        run: python research/examples/upt6_continuum_probe.py
