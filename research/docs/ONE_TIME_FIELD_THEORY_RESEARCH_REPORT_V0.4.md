@@ -96,7 +96,7 @@ Run the complete research test suite:
 python -m unittest discover -s research/tests -v
 ```
 
-The CI workflow now includes Experiment 9 on Python 3.10, 3.11, and 3.12. CI status should be reported separately from the mathematical conclusion.
+The CI workflow includes Experiment 9 on Python 3.10, 3.11, and 3.12. The corrected full workflow run [45168489466](https://github.com/pcsynergy/genesis-2.4/actions/runs/45168489466) completed successfully on commit `0032a72f295226d1f1ffc34f6ccc3c2635a57448`: all three Python matrix jobs passed, including the full unit-test suite and the dedicated Lorentz-covariance experiment. An earlier run exposed and helped correct a standalone test-runner import-path issue; the successful run is the corrected commit.
 
 ## 7. Next research steps
 
