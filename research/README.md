@@ -2,13 +2,14 @@
 
 This experimental research layer is separate from the legacy GENESIS 2.4 simulator. It does not alter the simulator's C sources or build system.
 
-## Research report
-- [One Time Field Theory Research Report v0.7](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.7.md) — adds Experiment 12, a prescribed spatially-flat FLRW curved-background extension.
-- [One Time Field Theory Research Report v0.6](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.6.md) — 3+1-dimensional Minkowski extension and tests.
-- [One Time Field Theory Research Report v0.5](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.5.md) — consolidated findings from Experiments 1–10, including stress-energy conservation.
-- [One Time Field Theory Research Report v0.4](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.4.md) — prior Lorentz-covariant formulation.
-- [One Time Field Theory Research Report v0.3](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.3.md) — consolidated findings from Experiments 1–8, including the local clock-field extension.
-- [One Time Field Theory Research Report v0.2](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.2.md) — prior report covering Experiments 1–7.
+## Research reports
+- [One Time Field Theory Research Report v0.8](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.8.md) — Experiment 13: Einstein–Hilbert metric variation and homogeneous FLRW gravitational equations.
+- [Research Report v0.7](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.7.md) — Experiment 12: prescribed-FLRW curved-background extension.
+- [Research Report v0.6](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.6.md) — 3+1-dimensional Minkowski extension.
+- [Research Report v0.5](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.5.md) — Experiments 1–10.
+- [Research Report v0.4](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.4.md)
+- [Research Report v0.3](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.3.md)
+- [Research Report v0.2](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.2.md)
 
 ## Specifications
 - [Architecture](docs/ARCHITECTURE.md)
@@ -34,11 +35,13 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/lorentz_covariant.py — Lorentz-covariant two-scalar action in 1+1 dimensions.
 - one_time_field/stress_energy.py — stress-energy tensor and flat-space Noether identity.
 - one_time_field/minkowski_3plus1.py — 3+1 Minkowski action, boosts, stress tensor, and conservation identity.
-- one_time_field/flrw_curved.py — Experiment 12: prescribed-FLRW geometry, homogeneous covariant wave operator, field equations, stress tensor, and continuity identity.
-- docs/FLRW_CURVED_EXPERIMENT.md — Experiment 12 derivation, tests, and limitations.
-- examples/flrw_curved_experiment.py — dedicated Experiment 12 runner.
+- one_time_field/flrw_curved.py — Experiment 12: prescribed-FLRW geometry and matter equations.
+- one_time_field/gravitational_flrw.py — Experiment 13: Einstein tensor, Friedmann equations, and constraint propagation.
+- docs/FLRW_CURVED_EXPERIMENT.md — Experiment 12 derivation and limitations.
+- docs/GRAVITATIONAL_FLRW_EXPERIMENT.md — Experiment 13 metric variation and gravity checks.
+- examples/flrw_curved_experiment.py — Experiment 12 runner.
+- examples/gravitational_flrw_experiment.py — Experiment 13 runner.
 - tests/ — numerical and algebraic consistency tests.
-- examples/ — reproducible research demonstrations.
 
 ## Run
 Requires Python 3.10 or newer.
@@ -46,6 +49,7 @@ Requires Python 3.10 or newer.
     python -m unittest discover -s research/tests -v
     python research/examples/minkowski_3plus1_experiment.py
     python research/examples/flrw_curved_experiment.py
+    python research/examples/gravitational_flrw_experiment.py
 
 ## Scientific discipline
-These are mathematical experiments, not validated physical field theories. The curved-background scale factor is prescribed, not dynamically solved. Numerical and algebraic tests validate the implemented equations and conventions only; they do not establish a physical mechanism, a measured clock field, or a unique unified field equation.
+These are mathematical experiments, not validated physical field theories. Experiment 13 adds standard Einstein gravity to the two-scalar matter ansatz; it does not derive a novel gravity law. Algebraic tests validate equations and conventions only, not a physical mechanism, measured clock field, or empirical cosmology.
