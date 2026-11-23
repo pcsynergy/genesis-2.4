@@ -52,3 +52,5 @@ jobs:
         run: python research/examples/feedback_convergence_experiment.py
       - name: Run action-derived clock-field coupling experiment
         run: python research/examples/clock_action_experiment.py
+      - name: Run unified shared field action experiment
+        run: python research/examples/unified_action_experiment.py
