@@ -56,3 +56,5 @@ jobs:
         run: python research/examples/unified_action_experiment.py
       - name: Run continuum-field refinement experiment
         run: python research/examples/continuum_action_experiment.py
+      - name: Run local clock-field refinement experiment
+        run: python research/examples/local_clock_field_experiment.py
