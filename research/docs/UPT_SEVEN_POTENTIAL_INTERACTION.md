@@ -68,7 +68,7 @@ The comparison is between the uncoupled baseline J=0 and a coupled model J>0, wi
 - Four configurations have edge cut K=2.
 - Two configurations have edge cut K=4.
 - At J=0, <K>=8/3 and <C>=1/3.
-- At beta=1 and J=1, the exact finite sum gives a lower expected cut and higher expected coherence than the uncoupled baseline.
+- At beta=1 and J=1, the exact finite sum gives Z=1.74218833, expected cut 2.31072481, and expected coherence 0.42231880, compared with the uncoupled baseline values 2.66666667 and 0.33333333.
 
 This is a conditional model-level prediction: if the specified Gibbs weighting is adopted, relational coupling shifts the distribution toward configurations with fewer disagreeing edges. It is not evidence that nature follows this distribution.
 
