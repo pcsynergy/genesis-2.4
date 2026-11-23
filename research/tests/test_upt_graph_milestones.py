@@ -55,8 +55,8 @@ class UPTGraphMilestoneTests(unittest.TestCase):
     def test_coupled_and_uncoupled_observable_predictions_differ(self):
         adjacency = [[0, 1], [1, 0]]
         initial = [0.0, 2.0]
-        coupled = run_network(adjacency, initial, coupling=0.5, dt=0.01, steps=200)
-        uncoupled = run_network(adjacency, initial, coupling=0.0, dt=0.01, steps=200)
+        coupled = run_network(adjacency, initial, coupling=0.5, dt=0.01, steps=1000)
+        uncoupled = run_network(adjacency, initial, coupling=0.0, dt=0.01, steps=1000)
         self.assertLess(disagreement(coupled), 1e-6)
         self.assertAlmostEqual(disagreement(uncoupled), disagreement(initial), places=12)
 
