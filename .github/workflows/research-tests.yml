@@ -71,3 +71,5 @@ jobs:
         run: python research/examples/cosmological_evolution_experiment.py
       - name: Run UPT-6 Noether and continuum probe
         run: python research/examples/upt6_continuum_probe.py
+      - name: Run UPT-7 finite configuration experiment
+        run: python research/examples/upt7_configuration_experiment.py
