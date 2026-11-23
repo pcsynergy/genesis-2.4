@@ -35,4 +35,6 @@ jobs:
         run: python research/examples/dynamics_comparison_demo.py
       - name: Run dynamics timestep convergence study
         run: python research/examples/dynamics_convergence_study.py
-\n      - name: Run coupled multi-domain network regimes\n        run: python research/examples/coupled_network_regimes.py\n
+
+      - name: Run coupled multi-domain network regimes
+        run: python research/examples/coupled_network_regimes.py
