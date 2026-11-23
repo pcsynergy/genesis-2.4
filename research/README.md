@@ -18,8 +18,9 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/variational.py — shared dimensionless potential functional and gradient flow.
 - one_time_field/hamiltonian.py — canonical conservative dynamics using velocity-Verlet.
 - one_time_field/damped.py — Rayleigh-damped Hamiltonian dynamics using symmetric damping/Verlet operator splitting.
-- tests/ — invariant, validation, extension, variational, Hamiltonian, and damping tests.
-- examples/dynamics_comparison_demo.py — same-initial-state comparison of gradient flow, Hamiltonian motion, and Rayleigh damping.
+- tests/ — invariant, validation, extension, variational, Hamiltonian, damping, and convergence tests.
+- examples/dynamics_comparison_demo.py — same-initial-state comparison of three dynamics regimes.
+- examples/dynamics_convergence_study.py — analytic-reference timestep study with state errors, energy drift, and damping-balance residuals.
 
 ## Run
 Requires Python 3.10 or newer.
@@ -30,6 +31,7 @@ Requires Python 3.10 or newer.
     python research/examples/variational_demo.py
     python research/examples/hamiltonian_demo.py
     python research/examples/dynamics_comparison_demo.py
+    python research/examples/dynamics_convergence_study.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. The tensor prototype does not define geometric tensor transformation laws. The shared potential is a selected dimensionless functional, not established physical energy. The damping coefficients and inertias are model parameters, not measured constants. Numerical behavior validates the specified equations and integrator only; it does not establish a physical mechanism or a unique unified field equation.
