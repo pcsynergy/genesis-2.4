@@ -26,7 +26,7 @@ class UPT6ContinuumTests(unittest.TestCase):
 
     def test_wave_and_diffusion_use_distinct_time_orders(self):
         values = [0.0, 1.0, 0.0, -1.0]
-        self.assertNotEqual(massless_wave_acceleration(values, 1.0), diffusion_rate(values, 1.0))
+        self.assertNotEqual(massless_wave_acceleration(values, 1.0, wave_speed=2.0), diffusion_rate(values, 1.0))
 
     def test_massless_wave_energy_is_nonnegative(self):
         energy = periodic_wave_energy([0.0, 1.0, 0.0, -1.0], [0.1, 0.0, -0.1, 0.0], 0.5)
