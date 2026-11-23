@@ -5,6 +5,7 @@ from .hamiltonian import HamiltonianFieldSystem
 from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
 from .tensor import TensorFieldNetwork
+from .temporal import TemporalLayer
 from .variational import VariationalFieldSystem
 
 __all__ = [
@@ -14,5 +15,6 @@ __all__ = [
     "HamiltonianFieldSystem",
     "PhaseOscillatorNetwork",
     "TensorFieldNetwork",
+    "TemporalLayer",
     "VariationalFieldSystem",
 ]
