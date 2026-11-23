@@ -28,8 +28,9 @@ jobs:
         run: python research/examples/two_node_demo.py
       - name: Run dimensional engine example
         run: python research/examples/dimensional_engine_demo.py
-
       - name: Run variational potential example
         run: python research/examples/variational_demo.py
       - name: Run Hamiltonian example
         run: python research/examples/hamiltonian_demo.py
+      - name: Run three-regime dynamics comparison
+        run: python research/examples/dynamics_comparison_demo.py
