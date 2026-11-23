@@ -65,3 +65,5 @@ jobs:
         run: python research/examples/minkowski_3plus1_experiment.py
       - name: Run prescribed-FLRW curved-background experiment
         run: python research/examples/flrw_curved_experiment.py
+      - name: Run metric variation and dynamical FLRW gravity experiment
+        run: python research/examples/gravitational_flrw_experiment.py
