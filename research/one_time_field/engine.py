@@ -70,8 +70,10 @@ class DimensionalFieldEngine:
             result["tensor"] = [list(row) for row in self.tensor.state]
         return result
 
-    def step(self, dt: float) -> dict[str, Any]:
-        """Advance every present domain once using pre-step coupling signals."""
+    def step(
+        self, dt: float, scalar_external_source: list[float] | None = None
+    ) -> dict[str, Any]:
+        """Advance all domains; optional scalar forcing is additive to coherence coupling."""
         if not isfinite(dt) or dt <= 0.0:
             raise ValueError("dt must be finite and positive")
 
@@ -79,8 +81,14 @@ class DimensionalFieldEngine:
         coherence = self.harmonic.order_parameter() if self.harmonic is not None else 0.0
 
         # Each coupling is a declared mapping between different state domains.
+        if scalar_external_source is not None:
+            scalar_external_source = [float(v) for v in scalar_external_source]
+            if len(scalar_external_source) != self.node_count or not all(isfinite(v) for v in scalar_external_source):
+                raise ValueError("scalar_external_source must contain one finite value per node")
         if self.scalar is not None:
             scalar_source = [self.coherence_to_scalar_gain * coherence] * self.node_count
+            if scalar_external_source is not None:
+                scalar_source = [a + b for a, b in zip(scalar_source, scalar_external_source)]
             self.scalar.step(dt, source=scalar_source)
 
         if self.harmonic is not None:
