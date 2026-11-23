@@ -8,6 +8,7 @@ from .network import GraphFieldNetwork
 from .tensor import TensorFieldNetwork
 from .temporal import TemporalLayer
 from .temporal_comparison import run_comparison as run_temporal_comparison
+from .temporal_coupling import run_coupling_experiment
 from .temporal_models import (
     EntropyProductionClock, EventClock, ExternalClock, HybridClock,
     ObserverClock, RelationalClock,
@@ -24,6 +25,7 @@ __all__ = [
     "TensorFieldNetwork",
     "TemporalLayer",
     "run_temporal_comparison",
+    "run_coupling_experiment",
     "EntropyProductionClock",
     "EventClock",
     "ExternalClock",
