@@ -55,12 +55,18 @@ def run_feedback_pair(
         coupled.step(dt, scalar_external_source=[feedback] * coupled.node_count)
         previous_rate = rate
 
+    # Evaluate diagnostics on the actual final states, not on the state
+    # immediately before the final integration step.
+    final_feedback = feedback_gain * (previous_rate - clock_baseline)
+    final_source = _scalar_total_source(coupled, final_feedback)
+    final_activity = FieldActivity.from_engine(coupled, scalar_source=final_source)
+    final_rate = final_activity.relational_rate(clock_gain, clock_baseline)
     distance = _distance(control.snapshot(), coupled.snapshot())
     result = {
         "dt": float(dt), "steps": float(steps), "final_lambda": float(final_lambda),
         "feedback_gain": float(feedback_gain), "state_distance": distance,
-        "final_feedback_source": feedback,
-        "final_clock_rate": previous_rate,
+        "final_feedback_source": final_feedback,
+        "final_clock_rate": final_rate,
     }
     if not all(isfinite(v) for v in result.values()):
         raise RuntimeError("non-finite result in feedback convergence study")
