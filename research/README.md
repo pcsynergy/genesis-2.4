@@ -2,6 +2,10 @@
 
 This experimental research layer is separate from the legacy GENESIS 2.4 simulator. It does not alter the simulator's C sources or build system.
 
+## Unified Potential Theory integration
+- [UPT Foundational Specification 0.1](docs/UPT_FOUNDATION.md) — Potential → One → Both → Many → All → Becoming → renewed Potential; defines ontological Potential separately from model potential energy.
+- [UPT–OTFT Integration 0.1](docs/UPT_OTFT_INTEGRATION.md) — maps UPT onto the existing GENESIS research architecture and cosmological model without changing the validated equations or overstating physical claims.
+
 ## Research reports
 - [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
 - [Experiment 14 protocol](docs/COSMOLOGICAL_EVOLUTION_EXPERIMENT.md) — equations, numerical method, tests, and limitations.
