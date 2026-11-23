@@ -6,7 +6,7 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - [Architecture](docs/ARCHITECTURE.md)
 - [Foundation](docs/FOUNDATION.md)
 - [Formal specification](docs/FORMAL_SPECIFICATION.md)
-- [Extensions](docs/EXTENSIONS.md) — conservation, harmonic oscillators, tensor-array states, the shared-topology dimensional engine, and a variational common-potential prototype.
+- [Extensions](docs/EXTENSIONS.md) — conservation, harmonic oscillators, tensor-array states, shared-topology composition, variational dynamics, Hamiltonian dynamics, and Rayleigh damping.
 - [Dimensional analysis and symmetry](docs/DIMENSIONAL_ANALYSIS.md) — reference scales, mobility units, and conditional conservation results.
 - [Action, Lagrangian, and Hamiltonian formulations](docs/ACTION_PRINCIPLE.md) — conservative and dissipative alternatives built from the shared potential.
 
@@ -15,10 +15,11 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/harmonic.py — Kuramoto-style phase-coupled oscillator network.
 - one_time_field/tensor.py — component-wise tensor-array graph diffusion prototype.
 - one_time_field/engine.py — dimensional engine composing the models on one shared graph with two explicit cross-domain coupling rules.
-- one_time_field/variational.py — shared dimensionless potential functional coupling scalar, phase, and tensor-array states through gradient flow.
-- one_time_field/hamiltonian.py — canonical conservative dynamics using velocity-Verlet integration and the shared potential.
-- tests/ — invariant, validation, extension, dimensional-engine, variational-gradient, and Hamiltonian tests.
-- examples/two_node_demo.py — runnable scalar example.
+- one_time_field/variational.py — shared dimensionless potential functional and gradient flow.
+- one_time_field/hamiltonian.py — canonical conservative dynamics using velocity-Verlet.
+- one_time_field/damped.py — Rayleigh-damped Hamiltonian dynamics using symmetric damping/Verlet operator splitting.
+- tests/ — invariant, validation, extension, variational, Hamiltonian, and damping tests.
+- examples/dynamics_comparison_demo.py — same-initial-state comparison of gradient flow, Hamiltonian motion, and Rayleigh damping.
 
 ## Run
 Requires Python 3.10 or newer.
@@ -28,6 +29,7 @@ Requires Python 3.10 or newer.
     python research/examples/dimensional_engine_demo.py
     python research/examples/variational_demo.py
     python research/examples/hamiltonian_demo.py
+    python research/examples/dynamics_comparison_demo.py
 
 ## Scientific discipline
-These are mathematical experiments, not validated physical field theories. The tensor prototype does not define geometric tensor transformation laws. The dimensional engine is a software composition of distinct equations. The variational prototype couples them through a chosen dimensionless functional, but does not derive a unique fundamental field equation. Cross-domain gains are user-defined modeling parameters, not measured physical constants. Numerical patterns are not proof of a physical mechanism.
+These are mathematical experiments, not validated physical field theories. The tensor prototype does not define geometric tensor transformation laws. The shared potential is a selected dimensionless functional, not established physical energy. The damping coefficients and inertias are model parameters, not measured constants. Numerical behavior validates the specified equations and integrator only; it does not establish a physical mechanism or a unique unified field equation.
