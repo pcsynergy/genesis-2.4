@@ -12,7 +12,8 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 
 ## UPT experiments
 - [UPT-3: Two-Component Relational Unity Experiment](docs/UPT_THREE_EXPERIMENT.md) — exact two-node model and common/difference modes.
-- [UPT-4 and UPT-5: Multi-Component Relational Network Tests](docs/UPT_GRAPH_MILESTONES_4_5.md) — connected/disconnected networks, admissibility preservation, and coupled-versus-uncoupled observable comparison.\n- [UPT-6: Conservation, Symmetry, and Physical Realization](docs/UPT_SIX_CONSERVATION_CONTINUUM.md) — Noether shift charge, graph-to-continuum distinctions, and the current absence of a distinctive empirical prediction.
+- [UPT-4 and UPT-5: Multi-Component Relational Network Tests](docs/UPT_GRAPH_MILESTONES_4_5.md) — connected/disconnected networks, admissibility preservation, and coupled-versus-uncoupled observable comparison.
+- [UPT-6: Conservation, Symmetry, and Physical Realization](docs/UPT_SIX_CONSERVATION_CONTINUUM.md) — Noether shift charge, graph-to-continuum distinctions, and the current absence of a distinctive empirical prediction.
 
 ## Research reports
 - [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
@@ -34,7 +35,8 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - [Action, Lagrangian, and Hamiltonian formulations](docs/ACTION_PRINCIPLE.md)
 
 ## Implemented models
-- one_time_field/network.py — scalar graph diffusion.\n- one_time_field/upt6_continuum.py — Noether shift-charge and periodic continuum-equation probes.
+- one_time_field/network.py — scalar graph diffusion.
+- one_time_field/upt6_continuum.py — Noether shift-charge and periodic continuum-equation probes.
 - one_time_field/harmonic.py — phase-coupled oscillator network.
 - one_time_field/tensor.py — component-wise tensor-array graph diffusion prototype.
 - one_time_field/engine.py — shared-graph multi-domain engine.
@@ -67,7 +69,8 @@ Requires Python 3.10 or newer.
     python research/examples/minkowski_3plus1_experiment.py
     python research/examples/flrw_curved_experiment.py
     python research/examples/gravitational_flrw_experiment.py
-    python research/examples/cosmological_evolution_experiment.py\n    python research/examples/upt6_continuum_probe.py
+    python research/examples/cosmological_evolution_experiment.py
+    python research/examples/upt6_continuum_probe.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The v0.9 report states the findings and limitations for independent review.
