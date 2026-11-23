@@ -27,7 +27,9 @@ class FieldActivity:
         scalar_weight: float = 1.0,
         phase_weight: float = 1.0,
         tensor_weight: float = 1.0,
+        scalar_source: list[float] | None = None,
     ) -> "FieldActivity":
+        """Calculate derivative activity; scalar_source is the total scalar forcing."""
         weights = {
             "scalar": scalar_weight,
             "phase": phase_weight,
@@ -39,7 +41,7 @@ class FieldActivity:
 
         contributions = {"scalar": 0.0, "phase": 0.0, "tensor": 0.0}
         if engine.scalar is not None:
-            rates = engine.scalar.derivative()
+            rates = engine.scalar.derivative(source=scalar_source)
             contributions["scalar"] = sum(v * v for v in rates) / len(rates)
         if engine.harmonic is not None:
             rates = engine.harmonic.derivative()
