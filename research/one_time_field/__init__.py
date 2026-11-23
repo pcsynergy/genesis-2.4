@@ -7,6 +7,7 @@ from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
 from .tensor import TensorFieldNetwork
 from .temporal import TemporalLayer
+from .temporal_comparison import run_comparison as run_temporal_comparison
 from .temporal_models import (
     EntropyProductionClock, EventClock, ExternalClock, HybridClock,
     ObserverClock, RelationalClock,
@@ -22,6 +23,7 @@ __all__ = [
     "PhaseOscillatorNetwork",
     "TensorFieldNetwork",
     "TemporalLayer",
+    "run_temporal_comparison",
     "EntropyProductionClock",
     "EventClock",
     "ExternalClock",
