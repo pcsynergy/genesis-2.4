@@ -190,3 +190,16 @@ The appropriate conclusion is deliberately bounded. The experiment establishes a
 For peer review, the next steps should be: (1) independently reproduce the trajectories and residuals; (2) compare RK4 against an adaptive high-accuracy solver; (3) quantify convergence order and global error; (4) derive and analyze linear scalar and metric perturbations; (5) establish ghost, gradient, and tachyonic stability conditions; (6) add standard radiation and matter sectors; and (7) define in advance a falsifiable observable and compare the model statistically against a baseline cosmology. Only after these stages would a claim of empirical relevance be justified.
 
 **Final finding:** the current homogeneous OTFT-inspired two-scalar model is numerically evolvable and constraint-consistent to the tested discretization accuracy. This is a foundation for further research, not a confirmation of a new physical theory.
+
+
+## 10. Selected references
+
+The following standard references provide the established theoretical and numerical context for the equations and methods used in this report. They are not evidence that the additional scalar field has been observed.
+
+1. Einstein, A. (1916). “Die Grundlage der allgemeinen Relativitätstheorie.” *Annalen der Physik*, 49, 769–822.
+2. Wald, R. M. (1984). *General Relativity*. University of Chicago Press.
+3. Mukhanov, V. (2005). *Physical Foundations of Cosmology*. Cambridge University Press.
+4. Dodelson, S., and Schmidt, F. (2020). *Modern Cosmology*, 2nd edition. Academic Press.
+5. Butcher, J. C. (2008). *Numerical Methods for Ordinary Differential Equations*, 2nd edition. John Wiley & Sons.
+
+The Einstein–Hilbert field equations, homogeneous FLRW reduction, stress-energy conservation, and perturbative cosmology context follow the standard treatments represented by Einstein, Wald, Mukhanov, and Dodelson and Schmidt. The fixed-step RK4 method is a classical explicit Runge–Kutta scheme; Butcher provides a systematic treatment of Runge–Kutta methods and their numerical properties. Experiment 14's particular two-scalar interaction is the research ansatz under investigation and should not be attributed to these references.
