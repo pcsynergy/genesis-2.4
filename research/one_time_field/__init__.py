@@ -1,6 +1,7 @@
 """Experimental mathematical models for the GENESIS Research layer."""
 from .damped import DampedHamiltonianFieldSystem
 from .engine import DimensionalFieldEngine
+from .field_activity import FieldActivity
 from .hamiltonian import HamiltonianFieldSystem
 from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
@@ -15,6 +16,7 @@ from .variational import VariationalFieldSystem
 __all__ = [
     "DampedHamiltonianFieldSystem",
     "DimensionalFieldEngine",
+    "FieldActivity",
     "GraphFieldNetwork",
     "HamiltonianFieldSystem",
     "PhaseOscillatorNetwork",
