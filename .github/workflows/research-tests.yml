@@ -60,3 +60,5 @@ jobs:
         run: python research/examples/local_clock_field_experiment.py
       - name: Run Lorentz-covariant scalar-clock field tests
         run: python research/examples/lorentz_covariant_experiment.py
+      - name: Run stress-energy conservation experiment
+        run: python research/examples/stress_energy_experiment.py
