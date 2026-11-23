@@ -50,3 +50,5 @@ jobs:
         run: python research/examples/temporal_coupling_experiment.py
       - name: Run feedback convergence and strength sweep
         run: python research/examples/feedback_convergence_experiment.py
+      - name: Run action-derived clock-field coupling experiment
+        run: python research/examples/clock_action_experiment.py
