@@ -42,3 +42,5 @@ jobs:
         run: python research/examples/temporal_clock_demo.py
       - name: Run comparative temporal models
         run: python research/examples/temporal_models_demo.py
+      - name: Run field-derived temporal activity experiment
+        run: python research/examples/field_derived_activity_experiment.py
