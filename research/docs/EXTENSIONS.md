@@ -1,4 +1,4 @@
-# Research Extensions — Draft 0.4
+# Research Extensions — Draft 0.5
 
 ## 1. Conservation and dissipation
 
@@ -111,14 +111,31 @@ For nonnegative damping coefficients gamma_a, the continuous energy balance is:
 
     dH/dt = -sum_a gamma_a * ||p_a||^2/m_a <= 0
 
-The implementation uses symmetric operator splitting: exact half-step exponential momentum damping, one conservative velocity-Verlet step, then a second exact half-step damping. This is a second-order split integrator. The continuous energy law is exact for the stated differential equations; the discrete trajectory can show small energy fluctuations from the conservative integrator, so tests assess resolved long-run energy reduction rather than requiring strict per-step monotonicity.
+The implementation uses symmetric operator splitting: exact half-step exponential momentum damping, one conservative velocity-Verlet step, then a second exact half-step damping. This is a second-order split integrator. Discrete energy can show small fluctuations, so validation uses convergence and energy-balance residuals rather than assuming strict per-step monotonicity.
 
-## 10. Three-regime comparison experiment
+## 10. Three-regime comparison
 
-`dynamics_comparison_demo.py` initializes three independent copies of the same one-coordinate quadratic potential, with the same initial coordinate and zero initial momentum:
+`dynamics_comparison_demo.py` initializes three independent copies of the same one-coordinate quadratic potential, with q(0)=1 and p(0)=0:
 
-- Gradient flow: `q_dot = -dV/dq`. It relaxes toward the minimum without inertial oscillation.
-- Hamiltonian: `q_dot=p/m`, `p_dot=-dV/dq`. It oscillates while the ideal continuous Hamiltonian is conserved.
-- Rayleigh damped: `q_dot=p/m`, `p_dot=-dV/dq-gamma*p`. It oscillates while losing energy to the modeled friction.
+- Gradient flow: q_dot=-dV/dq. It relaxes toward the minimum without inertial oscillation.
+- Hamiltonian: q_dot=p/m, p_dot=-dV/dq. It oscillates while ideal continuous H is conserved.
+- Rayleigh damped: q_dot=p/m, p_dot=-dV/dq-gamma*p. It oscillates while losing energy to modeled friction.
 
-The demo emits CSV time series of coordinate and energy values. It is a controlled numerical comparison of three equations built from the same V, not evidence that the three regimes are all present in nature or that V is a physical energy. A follow-up study should vary dt, inertia, and damping; compare trajectories at matched physical/dimensionless times; and report convergence and energy-balance residuals.
+This is a controlled comparison of three equations built from the same V, not evidence that these regimes are all present in nature or that V is physical energy.
+
+## 11. Timestep convergence and analytic reference study
+
+`dynamics_convergence_study.py` compares the numerical one-mode trajectories with exact solutions for V(q)=q^2/2, unit inertia, q(0)=1, p(0)=0, and gamma=0.4. It sweeps dt = 0.08, 0.04, 0.02, 0.01, 0.005 over a fixed final time t=4.
+
+The output reports:
+
+- Gradient-flow endpoint coordinate error against q(t)=exp(-t).
+- Hamiltonian endpoint state error against q(t)=cos(t), p(t)=-sin(t).
+- Maximum Hamiltonian drift from its initial value during the trajectory.
+- Damped endpoint state error against the underdamped analytic oscillator solution.
+- Damped energy-balance residual |H(T)+integral(gamma*p^2/m dt)-H(0)|, with the dissipation integral estimated by the trapezoidal rule.
+- Final damped energy.
+
+The explicit-Euler gradient-flow method is expected to converge at first order. Velocity-Verlet and the symmetric damping/Verlet split are expected to show second-order state accuracy in this smooth oscillator test. The balance residual also contains quadrature error from the trapezoidal dissipation estimate. These are numerical-order expectations for this test problem, not physical predictions of One Time Field Theory.
+
+The tests require errors to decrease as dt is refined and check a conservative second-order signature. The full study is also run in CI. Before extrapolating to coupled or higher-dimensional models, repeat convergence tests there and report sensitivity to graph topology, coupling coefficients, inertias, and damping.
