@@ -7,7 +7,7 @@ changes the clock label, not the geometric path through state space.
 from __future__ import annotations
 
 from copy import deepcopy
-from math import sqrt
+from math import isfinite, sqrt
 from pathlib import Path
 import sys
 
@@ -69,12 +69,12 @@ def run_comparison(
     """
     if not isinstance(steps, int) or isinstance(steps, bool) or steps < 0:
         raise ValueError("steps must be a nonnegative integer")
-    if not isinstance(d_lambda, (int, float)) or d_lambda <= 0:
-        raise ValueError("d_lambda must be positive")
-    if not isinstance(gain, (int, float)) or gain < 0:
-        raise ValueError("gain must be nonnegative")
-    if not isinstance(baseline, (int, float)) or baseline <= 0:
-        raise ValueError("baseline must be positive")
+    if not isinstance(d_lambda, (int, float)) or isinstance(d_lambda, bool) or not isfinite(d_lambda) or d_lambda <= 0:
+        raise ValueError("d_lambda must be finite and positive")
+    if not isinstance(gain, (int, float)) or isinstance(gain, bool) or not isfinite(gain) or gain < 0:
+        raise ValueError("gain must be finite and nonnegative")
+    if not isinstance(baseline, (int, float)) or isinstance(baseline, bool) or not isfinite(baseline) or baseline <= 0:
+        raise ValueError("baseline must be finite and positive")
 
     external = make_engine()
     relational = deepcopy(external)
