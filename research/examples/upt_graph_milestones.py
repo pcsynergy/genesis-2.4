@@ -33,8 +33,8 @@ def main():
     initial = [0.0, 2.0]
     coupled = GraphFieldNetwork(adjacency, initial, coupling=0.5)
     uncoupled = GraphFieldNetwork(adjacency, initial, coupling=0.0)
-    coupled.run(200, 0.01)
-    uncoupled.run(200, 0.01)
+    coupled.run(1000, 0.01)
+    uncoupled.run(1000, 0.01)
     print("observable: disagreement D = sum_i (x_i - mean(x))^2")
     print("initial D:", disagreement(initial))
     print("coupled D:", disagreement(coupled.state))
