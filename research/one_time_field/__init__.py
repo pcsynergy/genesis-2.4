@@ -7,6 +7,7 @@ from .hamiltonian import HamiltonianFieldSystem
 from .harmonic import PhaseOscillatorNetwork
 from .network import GraphFieldNetwork
 from .tensor import TensorFieldNetwork
+from .unified_action import UnifiedClockActionSystem
 from .temporal import TemporalLayer
 from .temporal_comparison import run_comparison as run_temporal_comparison
 from .temporal_coupling import run_coupling_experiment
@@ -18,6 +19,7 @@ from .variational import VariationalFieldSystem
 
 __all__ = [
     "ClockCoupledHamiltonianSystem",
+    "UnifiedClockActionSystem",
     "DampedHamiltonianFieldSystem",
     "DimensionalFieldEngine",
     "FieldActivity",
