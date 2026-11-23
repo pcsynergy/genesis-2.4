@@ -6,7 +6,7 @@ Unified Potential Theory is the conceptual umbrella for this research program. I
 - UPT–OTFT Integration 0.1: UPT_OTFT_INTEGRATION.md
 - UPT Configuration-Space Formalization 0.1: UPT_CONFIGURATION_SPACE.md — defines admissible configurations, constraints, relations, equivalence, actualization, and observables.
 - UPT-3 Two-Component Relational Unity Experiment: UPT_THREE_EXPERIMENT.md — derives the common and difference modes for a symmetric two-node coupling model.
-- UPT-4/5 Multi-Component Relational Network Tests: UPT_GRAPH_MILESTONES_4_5.md — tests graph-component convergence, state-domain preservation, and a model observable against an uncoupled baseline.
+- UPT-4/5 Multi-Component Relational Network Tests: UPT_GRAPH_MILESTONES_4_5.md — tests graph-component convergence, state-domain preservation, and a model observable against an uncoupled baseline.\n- UPT-6 Conservation, Symmetry, and Physical Realization: UPT_SIX_CONSERVATION_CONTINUUM.md — derives a standard scalar-field shift charge, distinguishes diffusion from wave dynamics, and assesses the lack of a new empirical prediction.
 
 UPT distinguishes ontological Potential (the domain of admissible possibilities) from a model's scalar potential-energy function and from an actualized field state. It does not supply a physical evolution law by itself. Every physical implementation must specify its configuration space, dynamics, symmetries, units, observables, and falsifiable predictions. Existing OTFT and cosmological experiments remain specific mathematical models and are not evidence that UPT has been empirically established.
 
