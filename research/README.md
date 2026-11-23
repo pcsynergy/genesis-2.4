@@ -20,6 +20,9 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/temporal_coupling.py — explicit delayed feedback from a field-derived clock rate into scalar-field dynamics.
 - one_time_field/feedback_convergence.py — Experiment 4 timestep refinement and feedback-strength sensitivity study.
 - one_time_field/clock_action.py — Experiment 5 augmented Lagrangian/Hamiltonian with a dynamical clock coordinate coupled to scalar-field amplitude.
+- one_time_field/unified_action.py — Experiment 6 shared action coupling scalar, phase, tensor-array, and dynamical-clock degrees of freedom; includes global phase-shift Noether charge.
+- docs/UNIFIED_SHARED_ACTION_EXPERIMENT.md — Experiment 6 action, symmetries, controlled limits, and interpretation limits.
+- examples/unified_action_experiment.py — demonstrates the unified clock–field action and uncoupled limit.
 - docs/FIELD_DERIVED_ACTIVITY.md — Experiment 1 procedure, assumptions, and interpretation limits.
 - docs/TEMPORAL_TIME_COMPARISON_EXPERIMENT.md — Experiment 2 paired-clock comparison and interpretation limits.
 - docs/FIELD_CLOCK_FEEDBACK_EXPERIMENT.md — Experiment 3 field–clock feedback hypothesis and interpretation limits.
