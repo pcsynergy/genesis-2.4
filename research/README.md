@@ -10,6 +10,10 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 ## UPT experiments
 - [UPT-3: Two-Component Relational Unity Experiment](docs/UPT_THREE_EXPERIMENT.md) — exact two-node graph-coupling model, common/difference modes, analytic solution, and software tests.
 
+## UPT experiments
+- [UPT-3: Two-Component Relational Unity Experiment](docs/UPT_THREE_EXPERIMENT.md) — exact two-node model and common/difference modes.
+- [UPT-4 and UPT-5: Multi-Component Relational Network Tests](docs/UPT_GRAPH_MILESTONES_4_5.md) — connected/disconnected networks, admissibility preservation, and coupled-versus-uncoupled observable comparison.
+
 ## Research reports
 - [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
 - [Experiment 14 protocol](docs/COSMOLOGICAL_EVOLUTION_EXPERIMENT.md) — equations, numerical method, tests, and limitations.
