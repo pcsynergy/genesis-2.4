@@ -2,7 +2,7 @@
 
 The model is a finite-dimensional, dimensionless Hamiltonian prototype.
 It introduces a clock coordinate T with inertia and a harmonic restoring
-potential, coupled to the scalar-field amplitude observable C(x)=1/2 sum x_i^2.
+potential, coupled to the scalar-field amplitude observable C(x)=1/2 sum x_i^2/(1+x_i^2).
 
 U_aug(q,T) = V(q) + 1/2*kappa*T^2 - g*T*C(x)
 The coupling is part of the potential, not an externally injected source.
@@ -54,7 +54,7 @@ class ClockCoupledHamiltonianSystem:
 
     def clock_observable(self) -> float:
         """Return C(x)=1/2 ||x||^2, the scalar-field amplitude observable."""
-        return 0.5 * sum(x*x for x in self.field_system.potential_system.scalar)
+        return 0.5 * sum((x*x)/(1.0 + x*x) for x in self.field_system.potential_system.scalar)
 
     def potential_energy(self) -> float:
         return (
@@ -81,7 +81,7 @@ class ClockCoupledHamiltonianSystem:
         gradients = self.field_system.potential_system.gradients()
         scalar = self.field_system.potential_system.scalar
         gradients["scalar"] = [
-            grad - self.coupling * self.clock_coordinate * x
+            grad - self.coupling * self.clock_coordinate * x / ((1.0 + x*x) ** 2)
             for grad, x in zip(gradients["scalar"], scalar)
         ]
         clock_gradient = (
