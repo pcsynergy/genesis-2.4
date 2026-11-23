@@ -24,6 +24,14 @@ class FieldActivityTests(unittest.TestCase):
         self.assertAlmostEqual(result.tensor, 0.5)
         self.assertAlmostEqual(result.total, result.scalar + result.phase + result.tensor)
 
+    def test_scalar_activity_includes_explicit_source(self):
+        adjacency = [[0.0, 1.0], [1.0, 0.0]]
+        engine = DimensionalFieldEngine(
+            scalar=GraphFieldNetwork(adjacency, [0.0, 0.0], coupling=0.0)
+        )
+        result = FieldActivity.from_engine(engine, scalar_source=[2.0, 0.0])
+        self.assertAlmostEqual(result.scalar, 2.0)
+
     def test_weights_select_domains_and_scale_total(self):
         adjacency = [[0.0, 1.0], [1.0, 0.0]]
         engine = DimensionalFieldEngine(
