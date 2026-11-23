@@ -69,3 +69,5 @@ jobs:
         run: python research/examples/gravitational_flrw_experiment.py
       - name: Run coupled cosmological evolution experiment
         run: python research/examples/cosmological_evolution_experiment.py
+      - name: Run UPT-6 Noether and continuum probe
+        run: python research/examples/upt6_continuum_probe.py
