@@ -3,7 +3,8 @@
 This experimental research layer is separate from the legacy GENESIS 2.4 simulator. It does not alter the simulator's C sources or build system.
 
 ## Research report
-- [One Time Field Theory Research Report v0.2](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.2.md) — consolidated findings from Experiments 1–7, numerical evidence, limitations, and next milestones.
+- [One Time Field Theory Research Report v0.3](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.3.md) — consolidated findings from Experiments 1–8, including the local clock-field extension.
+- [One Time Field Theory Research Report v0.2](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.2.md) — prior report covering Experiments 1–7.
 
 ## Specifications
 - [Architecture](docs/ARCHITECTURE.md)
