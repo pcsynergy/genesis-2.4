@@ -62,3 +62,5 @@ jobs:
         run: python research/examples/lorentz_covariant_experiment.py
       - name: Run stress-energy conservation experiment
         run: python research/examples/stress_energy_experiment.py
+      - name: Run 3+1 Minkowski covariance and stress-energy experiment
+        run: python research/examples/minkowski_3plus1_experiment.py
