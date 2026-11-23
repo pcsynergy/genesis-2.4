@@ -1,3 +1,14 @@
+# Unified Potential Theory — integration index
+
+Unified Potential Theory is the conceptual umbrella for this research program. Its foundational sequence is Potential → One → Both → Many → All → Becoming → renewed Potential. See:
+
+- UPT Foundational Specification 0.1: UPT_FOUNDATION.md
+- UPT–OTFT Integration 0.1: UPT_OTFT_INTEGRATION.md
+
+UPT distinguishes ontological Potential (the domain of admissible possibilities) from a model's scalar potential-energy function and from an actualized field state. It does not supply a physical evolution law by itself. Every physical implementation must specify its configuration space, dynamics, symmetries, units, observables, and falsifiable predictions. Existing OTFT and cosmological experiments remain specific mathematical models and are not evidence that UPT has been empirically established.
+
+---
+
 # One Time Field Theory — Formal Specification Draft 0.2
 
 **Status:** exploratory mathematical specification  
