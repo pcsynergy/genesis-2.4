@@ -67,3 +67,5 @@ jobs:
         run: python research/examples/flrw_curved_experiment.py
       - name: Run metric variation and dynamical FLRW gravity experiment
         run: python research/examples/gravitational_flrw_experiment.py
+      - name: Run coupled cosmological evolution experiment
+        run: python research/examples/cosmological_evolution_experiment.py
