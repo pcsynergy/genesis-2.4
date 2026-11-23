@@ -45,12 +45,14 @@ def make_potential(cross_coupling=True):
     )
 
 
+def flatten_values(values):
+    if values and isinstance(values[0], list):
+        return [v for row in values for v in row]
+    return list(values)
+
+
 def flatten(state):
-    return (
-        list(state["scalar"])
-        + list(state["phases"])
-        + [v for row in state["tensor"] for v in row]
-    )
+    return list(state["scalar"]) + list(state["phases"]) + flatten_values(state["tensor"])
 
 
 class CoupledNetworkRegimeTests(unittest.TestCase):
@@ -60,10 +62,8 @@ class CoupledNetworkRegimeTests(unittest.TestCase):
         for domain in ("scalar", "phases", "tensor"):
             self.assertTrue(
                 any(abs(a - b) > 1.0e-8 for a, b in zip(
-                    flatten({domain: coupled[domain]}) if domain != "tensor"
-                    else {"tensor": coupled[domain]},
-                    flatten({domain: uncoupled[domain]}) if domain != "tensor"
-                    else {"tensor": uncoupled[domain]},
+                    flatten_values(coupled[domain]),
+                    flatten_values(uncoupled[domain]),
                 )),
                 msg=f"cross coupling did not alter {domain} gradient",
             )
