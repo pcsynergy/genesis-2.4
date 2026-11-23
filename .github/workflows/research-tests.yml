@@ -44,3 +44,5 @@ jobs:
         run: python research/examples/temporal_models_demo.py
       - name: Run field-derived temporal activity experiment
         run: python research/examples/field_derived_activity_experiment.py
+      - name: Run external versus relational time comparison
+        run: python research/examples/temporal_time_comparison.py
