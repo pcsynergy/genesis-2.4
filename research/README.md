@@ -16,7 +16,9 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/tensor.py — component-wise tensor-array graph diffusion prototype.
 - one_time_field/engine.py — dimensional engine composing the models on one shared graph with two explicit cross-domain coupling rules.
 - one_time_field/field_activity.py — field-derived mean-square derivative activity and candidate relational clock rate.
+- one_time_field/temporal_comparison.py — paired external-time and relational-time integration using the chain-rule reparameterization.
 - docs/FIELD_DERIVED_ACTIVITY.md — Experiment 1 procedure, assumptions, and interpretation limits.
+- docs/TEMPORAL_TIME_COMPARISON_EXPERIMENT.md — Experiment 2 paired-clock comparison and interpretation limits.
 - one_time_field/variational.py — shared dimensionless potential functional and gradient flow.
 - one_time_field/hamiltonian.py — canonical conservative dynamics using velocity-Verlet.
 - one_time_field/damped.py — Rayleigh-damped Hamiltonian dynamics using symmetric damping/Verlet operator splitting.
@@ -28,6 +30,7 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - examples/temporal_clock_demo.py — demonstrates separate temporal layers.
 - examples/temporal_models_demo.py — compares distinct clock readings side by side.
 - examples/field_derived_activity_experiment.py — derives a candidate clock rate from live scalar, phase, and tensor derivatives.
+- examples/temporal_time_comparison.py — compares external and relational time on identical initial field states.
 - examples/dynamics_comparison_demo.py — same-initial-state comparison of three dynamics regimes.
 - examples/dynamics_convergence_study.py — analytic-reference timestep study with state errors, energy drift, and damping-balance residuals.
 - examples/coupled_network_regimes.py — three-node scalar/phase/tensor-array network comparison across gradient, Hamiltonian, and damped dynamics.
@@ -46,6 +49,7 @@ Requires Python 3.10 or newer.
     python research/examples/temporal_clock_demo.py
     python research/examples/temporal_models_demo.py
     python research/examples/field_derived_activity_experiment.py
+    python research/examples/temporal_time_comparison.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. The tensor prototype does not define geometric tensor transformation laws. The shared potential is a selected dimensionless functional, not established physical energy. The damping coefficients and inertias are model parameters, not measured constants. Numerical behavior validates the specified equations and integrator only; it does not establish a physical mechanism or a unique unified field equation.
