@@ -1,4 +1,5 @@
 """Experimental mathematical models for the GENESIS Research layer."""
+from .clock_action import ClockCoupledHamiltonianSystem
 from .damped import DampedHamiltonianFieldSystem
 from .engine import DimensionalFieldEngine
 from .field_activity import FieldActivity
@@ -16,6 +17,7 @@ from .temporal_models import (
 from .variational import VariationalFieldSystem
 
 __all__ = [
+    "ClockCoupledHamiltonianSystem",
     "DampedHamiltonianFieldSystem",
     "DimensionalFieldEngine",
     "FieldActivity",
