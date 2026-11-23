@@ -40,3 +40,5 @@ jobs:
         run: python research/examples/coupled_network_regimes.py
       - name: Run temporal clock demonstration
         run: python research/examples/temporal_clock_demo.py
+      - name: Run comparative temporal models
+        run: python research/examples/temporal_models_demo.py
