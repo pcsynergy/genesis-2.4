@@ -3,7 +3,7 @@
 This experimental research layer is separate from the legacy GENESIS 2.4 simulator. It does not alter the simulator's C sources or build system.
 
 ## Research reports
-- [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,459-word peer-review-style report.
+- [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
 - [Experiment 14 protocol](docs/COSMOLOGICAL_EVOLUTION_EXPERIMENT.md) — equations, numerical method, tests, and limitations.
 - [Research Report v0.8](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.8.md) — Experiment 13: Einstein–Hilbert metric variation and homogeneous FLRW gravitational equations.
 - [Research Report v0.7](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.7.md) — Experiment 12: prescribed-FLRW curved-background extension.
@@ -58,4 +58,4 @@ Requires Python 3.10 or newer.
     python research/examples/cosmological_evolution_experiment.py
 
 ## Scientific discipline
-These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The 2,459-word v0.9 report states the findings and limitations for independent review.
+These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The v0.9 report states the findings and limitations for independent review.
