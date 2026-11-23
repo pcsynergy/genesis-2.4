@@ -3,6 +3,7 @@
 This experimental research layer is separate from the legacy GENESIS 2.4 simulator. It does not alter the simulator's C sources or build system.
 
 ## Research report
+- [One Time Field Theory Research Report v0.4](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.4.md) — consolidated findings from Experiments 1–9, including the Lorentz-covariant scalar/clock-field formulation.
 - [One Time Field Theory Research Report v0.3](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.3.md) — consolidated findings from Experiments 1–8, including the local clock-field extension.
 - [One Time Field Theory Research Report v0.2](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.2.md) — prior report covering Experiments 1–7.
 
@@ -27,7 +28,9 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 - one_time_field/unified_action.py — Experiment 6 shared action coupling scalar, phase, tensor-array, and dynamical-clock degrees of freedom; includes global phase-shift Noether charge.
 - one_time_field/continuum_action.py — Experiment 7 periodic 1-D scalar continuum-field action coupled to a global dynamical clock; includes grid-refinement and energy-drift diagnostics.
 - one_time_field/local_clock_field.py — Experiment 8 spatially local clock field coupled pointwise to a scalar field, with propagation, energy, and grid-refinement diagnostics.
+- one_time_field/lorentz_covariant.py — Experiment 9 Lorentz-covariant two-scalar action, boost transformations, d'Alembertian, and Euler–Lagrange residuals.
 - docs/LOCAL_CLOCK_FIELD_EXPERIMENT.md — Experiment 8 local clock-field action, equations, numerical protocol, and covariance limitations.
+- docs/LORENTZ_COVARIANT_EXPERIMENT.md — Experiment 9 covariant action, field equations, boost-invariance tests, and scope limitations.
 - examples/local_clock_field_experiment.py — runs the Experiment 8 local clock-field refinement study.
 - docs/CONTINUUM_FIELD_EXPERIMENT.md — Experiment 7 continuum ansatz, equations, numerical protocol, and physical interpretation limits.
 - examples/continuum_action_experiment.py — runs the Experiment 7 spatial-grid refinement study.
