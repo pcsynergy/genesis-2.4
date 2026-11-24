@@ -87,3 +87,7 @@ jobs:
         run: python research/examples/upt13_falsifiability_experiment.py
       - name: Run UPT-14 noise, uncertainty, and significance experiment
         run: python research/examples/upt14_uncertainty_experiment.py
+      - name: Run integrated full UPT reference model
+        run: python research/examples/upt_full_theory_experiment.py
+      - name: Run UPT-16 unified governing-principle compatibility experiment
+        run: python research/examples/upt16_unified_principle_experiment.py
