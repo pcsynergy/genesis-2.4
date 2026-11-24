@@ -47,7 +47,7 @@ class UPT8RenewedPotentialTests(unittest.TestCase):
 
     def test_activation_requires_threshold_support(self):
         model = UPTAdaptivePotentialSpace(
-            CYCLE4, initial_active_count=2, activation_threshold=1.1
+            CYCLE4, initial_active_count=2, activation_threshold=2.1
         )
         self.assertEqual(len(model.domain_history(1)[-1]), 6)
 
