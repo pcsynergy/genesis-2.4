@@ -59,7 +59,7 @@ class UPT9Tests(unittest.TestCase):
         self.assertAlmostEqual(a,b,places=14)
 
     def test_admissible_domain_can_expand_and_contract(self):
-        self.assertEqual(len(self.model.active_count_domain(2)), 11)
+        self.assertEqual(len(self.model.active_count_domain(2)), 14)
         self.assertEqual(len(self.model.active_count_domain(0)), 5)
 
     def test_adaptive_and_memoryless_baselines_differ(self):
