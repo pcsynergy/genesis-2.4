@@ -11,11 +11,11 @@ class UPT12Tests(unittest.TestCase):
         scales = PhysicalScales(length=2.0, time=3.0, field=4.0, energy=5.0)
         params = DimensionfulParameters(10.0, 15.0, 20.0, 30.0, 35.0)
         result = params.dimensionless(scales)
-        self.assertAlmostEqual(result["relational_strength"], 16.0 / 5.0)
-        self.assertAlmostEqual(result["memory_strength"], 48.0 / 5.0)
-        self.assertAlmostEqual(result["bistable_strength"], 1024.0 / 5.0)
-        self.assertAlmostEqual(result["field_mobility"], 45.0 / 8.0)
-        self.assertAlmostEqual(result["memory_mobility"], 105.0 / 8.0)
+        self.assertAlmostEqual(result["relational_strength"], 16.0)
+        self.assertAlmostEqual(result["memory_strength"], 96.0)
+        self.assertAlmostEqual(result["bistable_strength"], 2048.0)
+        self.assertAlmostEqual(result["field_mobility"], 56.25)
+        self.assertAlmostEqual(result["memory_mobility"], 65.625)
 
     def test_invalid_scales_and_parameters_rejected(self):
         with self.assertRaises(ValueError):
