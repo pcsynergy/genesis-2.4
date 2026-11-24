@@ -78,3 +78,4 @@ These are mathematical experiments, not validated physical field theories. Exper
 - [UPT-8: Renewed Potential and Adaptive Admissibility](docs/UPT_EIGHT_RENEWED_POTENTIAL.md) — interaction-driven expansion of a finite admissible domain, with closure and threshold tests.
 
 - [UPT-9: Reversibility, Memory, and Thermodynamic Consistency](docs/UPT_NINE_REVERSIBILITY_MEMORY.md) — an 80-state reversible Markov model tests probability conservation, detailed balance, memory dependence, and adaptive admissibility.
+- [UPT-10: Variational Relational-Memory Dynamics](docs/UPT_TEN_ACTION_PRINCIPLE.md) — derives a dissipative graph-field and memory flow from an Onsager/Rayleighian principle, with explicit distinction from conservative action and Markov jump dynamics.
