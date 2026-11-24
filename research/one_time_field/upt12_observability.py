@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from math import isfinite
 from typing import Sequence
 
-from one_time_field.upt11_continuum_limit import UPTContinuumLimit
+from .upt11_continuum_limit import UPTContinuumLimit
 
 
 @dataclass(frozen=True)
