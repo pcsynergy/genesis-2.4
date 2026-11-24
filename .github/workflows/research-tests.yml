@@ -75,3 +75,5 @@ jobs:
         run: python research/examples/upt7_configuration_experiment.py
       - name: Run UPT-8 renewed-potential experiment
         run: python research/examples/upt8_renewed_potential_experiment.py
+      - name: Run UPT-9 reversible-memory experiment
+        run: python research/examples/upt9_memory_dynamics_experiment.py
