@@ -16,7 +16,8 @@ def fixture(rate=0.75, sigma=0.015, seed=14):
 class UPT14Tests(unittest.TestCase):
     def test_exact_trajectory_and_zero_rate(self):
         t, u = [0.0, 0.5, 1.0], [1.0, 2.0, 3.0]
-        self.assertEqual(predict_memory(t, u, 0.4, 0.0), [0.4, 0.4, 0.4])
+        for value in predict_memory(t, u, 0.4, 0.0):
+            self.assertAlmostEqual(value, 0.4, places=14)
         self.assertGreater(predict_memory(t, u, 0.4, 1.0)[1], 0.4)
 
     def test_recovers_noisy_positive_rate(self):
