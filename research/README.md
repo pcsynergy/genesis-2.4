@@ -74,3 +74,5 @@ Requires Python 3.10 or newer.
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The v0.9 report states the findings and limitations for independent review.
+
+- [UPT-8: Renewed Potential and Adaptive Admissibility](docs/UPT_EIGHT_RENEWED_POTENTIAL.md) — interaction-driven expansion of a finite admissible domain, with closure and threshold tests.
