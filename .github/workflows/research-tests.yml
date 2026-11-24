@@ -85,3 +85,5 @@ jobs:
         run: python research/examples/upt12_observability_experiment.py
       - name: Run UPT-13 falsifiability and held-out comparison experiment
         run: python research/examples/upt13_falsifiability_experiment.py
+      - name: Run UPT-14 noise, uncertainty, and significance experiment
+        run: python research/examples/upt14_uncertainty_experiment.py
