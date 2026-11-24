@@ -154,3 +154,7 @@ Until these are supplied and tested, the model remains an abstract network-dynam
 ## 11. Versioning rule
 
 Any change to the axioms, state space, governing equation, or physical interpretation must increment the specification version and document which prior predictions remain valid.
+
+## UPT-8 extension: renewed potential
+
+See [UPT_EIGHT_RENEWED_POTENTIAL.md](UPT_EIGHT_RENEWED_POTENTIAL.md). UPT-8 extends the fixed-domain UPT-7 ensemble with an explicit monotone activation rule that expands admissibility. It demonstrates a change in a model's state domain, not physical creation or a validated law of nature.
