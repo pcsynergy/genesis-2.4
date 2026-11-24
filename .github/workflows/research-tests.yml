@@ -71,3 +71,15 @@ jobs:
         run: python research/examples/cosmological_evolution_experiment.py
       - name: Run UPT-6 Noether and continuum probe
         run: python research/examples/upt6_continuum_probe.py
+      - name: Run UPT-7 finite configuration experiment
+        run: python research/examples/upt7_configuration_experiment.py
+      - name: Run UPT-8 renewed-potential experiment
+        run: python research/examples/upt8_renewed_potential_experiment.py
+      - name: Run UPT-9 reversible-memory experiment
+        run: python research/examples/upt9_memory_dynamics_experiment.py
+      - name: Run UPT-10 variational action-principle experiment
+        run: python research/examples/upt10_action_principle_experiment.py
+      - name: Run UPT-11 continuum-limit experiment
+        run: python research/examples/upt11_continuum_limit_experiment.py
+      - name: Run UPT-12 dimensional scaling and observability experiment
+        run: python research/examples/upt12_observability_experiment.py

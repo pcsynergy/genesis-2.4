@@ -13,7 +13,7 @@ This experimental research layer is separate from the legacy GENESIS 2.4 simulat
 ## UPT experiments
 - [UPT-3: Two-Component Relational Unity Experiment](docs/UPT_THREE_EXPERIMENT.md) — exact two-node model and common/difference modes.
 - [UPT-4 and UPT-5: Multi-Component Relational Network Tests](docs/UPT_GRAPH_MILESTONES_4_5.md) — connected/disconnected networks, admissibility preservation, and coupled-versus-uncoupled observable comparison.
-- [UPT-6: Conservation, Symmetry, and Physical Realization](docs/UPT_SIX_CONSERVATION_CONTINUUM.md) — Noether shift charge, graph-to-continuum distinctions, and the current absence of a distinctive empirical prediction.
+- [UPT-6: Conservation, Symmetry, and Physical Realization](docs/UPT_SIX_CONSERVATION_CONTINUUM.md) — Noether shift charge, graph-to-continuum distinctions, and the current absence of a distinctive empirical prediction.\n- [UPT-7: Potential, Field Interaction, and Observable Emergence](docs/UPT_SEVEN_POTENTIAL_INTERACTION.md) — exact finite configuration-space ensemble with a fixed-count constraint and relational-coherence observable.
 
 ## Research reports
 - [One Time Field Theory Research Report v0.9](docs/ONE_TIME_FIELD_THEORY_RESEARCH_REPORT_V0.9.md) — Experiment 14: numerical evolution of the coupled scalar–clock FLRW model; 2,400+ word peer-review-style report.
@@ -70,7 +70,15 @@ Requires Python 3.10 or newer.
     python research/examples/flrw_curved_experiment.py
     python research/examples/gravitational_flrw_experiment.py
     python research/examples/cosmological_evolution_experiment.py
-    python research/examples/upt6_continuum_probe.py
+    python research/examples/upt6_continuum_probe.py\n    python research/examples/upt7_configuration_experiment.py
+    python research/examples/upt10_action_principle_experiment.py
+    python research/examples/upt11_continuum_limit_experiment.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The v0.9 report states the findings and limitations for independent review.
+
+- [UPT-8: Renewed Potential and Adaptive Admissibility](docs/UPT_EIGHT_RENEWED_POTENTIAL.md) — interaction-driven expansion of a finite admissible domain, with closure and threshold tests.
+
+- [UPT-9: Reversibility, Memory, and Thermodynamic Consistency](docs/UPT_NINE_REVERSIBILITY_MEMORY.md) — an 80-state reversible Markov model tests probability conservation, detailed balance, memory dependence, and adaptive admissibility.
+- [UPT-10: Variational Relational-Memory Dynamics](docs/UPT_TEN_ACTION_PRINCIPLE.md) — derives a dissipative graph-field and memory flow from an Onsager/Rayleighian principle, with explicit distinction from conservative action and Markov jump dynamics.
+- [UPT-11: Continuum Limit and Model-Level Observables](docs/UPT_ELEVEN_CONTINUUM_LIMIT.md) — constructs a periodic 1-D continuum gradient flow, defines mean/variance/memory observables, and tests finite-difference refinement.
