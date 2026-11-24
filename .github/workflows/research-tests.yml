@@ -73,3 +73,5 @@ jobs:
         run: python research/examples/upt6_continuum_probe.py
       - name: Run UPT-7 finite configuration experiment
         run: python research/examples/upt7_configuration_experiment.py
+      - name: Run UPT-8 renewed-potential experiment
+        run: python research/examples/upt8_renewed_potential_experiment.py
