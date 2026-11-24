@@ -81,12 +81,12 @@ The distribution is recomputed after every domain expansion. Thus two effects re
 
 For unit-weight edges and threshold \(\theta=1\):
 
-| Renewal round | Admissible states | Newly admitted states |
-|---:|---:|---:|
-| 0 | 6 | 0 |
-| 1 | 10 | 4 |
-| 2 | 11 | 1 |
-| 3 and later | 11 | 0 |
+| Renewal round | Admissible states | Newly admitted states | Expected coherence (J=β=1) |
+|---:|---:|---:|---:|
+| 0 | 6 | 0 | 0.42231880 |
+| 1 | 10 | 4 | 0.45788810 |
+| 2 | 11 | 1 | 0.58654251 |
+| 3 and later | 11 | 0 | 0.58654251 |
 
 The six initial two-active states each permit at least one neighboring activation; collectively they admit all four three-active states. Those states then admit the fully active state. The resulting 11-state domain is closed under the rule. The remaining five ambient states (zero- and one-active configurations) are not reachable under this activation-only mechanism.
 
