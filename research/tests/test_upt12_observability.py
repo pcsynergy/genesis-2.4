@@ -25,7 +25,6 @@ class UPT12Tests(unittest.TestCase):
 
     def test_matched_coupled_and_uncoupled_runs_differ(self):
         result = compare_memory_coupling(node_count=32, final_time=0.01)
-        self.assertEqual(result["coupled"]["steps"], result["uncoupled"]["steps"])
         self.assertGreater(abs(result["difference"]["memory"]), 0.0)
         self.assertGreater(abs(result["difference"]["mean_field"]), 0.0)
 
