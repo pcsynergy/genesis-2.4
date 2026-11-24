@@ -81,3 +81,5 @@ jobs:
         run: python research/examples/upt10_action_principle_experiment.py
       - name: Run UPT-11 continuum-limit experiment
         run: python research/examples/upt11_continuum_limit_experiment.py
+      - name: Run UPT-12 dimensional scaling and observability experiment
+        run: python research/examples/upt12_observability_experiment.py
