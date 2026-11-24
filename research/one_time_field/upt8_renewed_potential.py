@@ -99,9 +99,10 @@ class UPTAdaptivePotentialSpace:
             raise ValueError("rounds must be a nonnegative integer")
         history = [self.initial_domain]
         for _ in range(rounds):
-            next_domain = self.renewal_step(history[-1])
+            previous = history[-1]
+            next_domain = self.renewal_step(previous)
             history.append(next_domain)
-            if next_domain == history[-1]:
+            if next_domain == previous:
                 break
         return tuple(history)
 
