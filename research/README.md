@@ -71,6 +71,7 @@ Requires Python 3.10 or newer.
     python research/examples/gravitational_flrw_experiment.py
     python research/examples/cosmological_evolution_experiment.py
     python research/examples/upt6_continuum_probe.py\n    python research/examples/upt7_configuration_experiment.py
+    python research/examples/upt10_action_principle_experiment.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The v0.9 report states the findings and limitations for independent review.
