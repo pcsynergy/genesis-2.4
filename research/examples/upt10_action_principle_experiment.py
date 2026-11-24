@@ -1,5 +1,8 @@
 """Run the UPT-10 finite-dimensional Onsager-flow demonstration."""
-from research.one_time_field.upt10_action_principle import UPTActionPrinciple
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from one_time_field.upt10_action_principle import UPTActionPrinciple
 
 
 def main():
