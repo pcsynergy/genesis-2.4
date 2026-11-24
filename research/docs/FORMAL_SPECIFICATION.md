@@ -158,3 +158,7 @@ Any change to the axioms, state space, governing equation, or physical interpret
 ## UPT-8 extension: renewed potential
 
 See [UPT_EIGHT_RENEWED_POTENTIAL.md](UPT_EIGHT_RENEWED_POTENTIAL.md). UPT-8 extends the fixed-domain UPT-7 ensemble with an explicit monotone activation rule that expands admissibility. It demonstrates a change in a model's state domain, not physical creation or a validated law of nature.
+
+## UPT-9 extension: reversible memory dynamics
+
+See [UPT_NINE_REVERSIBILITY_MEMORY.md](UPT_NINE_REVERSIBILITY_MEMORY.md). The augmented configuration-memory process supplies a reversible finite-state stochastic model with a Gibbs stationary distribution. Its memory coordinate changes projected configuration transition rates; this is a mathematical construction, not an established physical law.
