@@ -72,6 +72,7 @@ Requires Python 3.10 or newer.
     python research/examples/cosmological_evolution_experiment.py
     python research/examples/upt6_continuum_probe.py\n    python research/examples/upt7_configuration_experiment.py
     python research/examples/upt10_action_principle_experiment.py
+    python research/examples/upt11_continuum_limit_experiment.py
 
 ## Scientific discipline
 These are mathematical experiments, not validated physical field theories. Experiment 14 numerically evolves the two-scalar matter ansatz with standard Einstein gravity and monitors Friedmann constraint drift. It does not establish that T is physical time, derive a novel gravity law, or provide empirical support against observations. The v0.9 report states the findings and limitations for independent review.
@@ -80,3 +81,4 @@ These are mathematical experiments, not validated physical field theories. Exper
 
 - [UPT-9: Reversibility, Memory, and Thermodynamic Consistency](docs/UPT_NINE_REVERSIBILITY_MEMORY.md) — an 80-state reversible Markov model tests probability conservation, detailed balance, memory dependence, and adaptive admissibility.
 - [UPT-10: Variational Relational-Memory Dynamics](docs/UPT_TEN_ACTION_PRINCIPLE.md) — derives a dissipative graph-field and memory flow from an Onsager/Rayleighian principle, with explicit distinction from conservative action and Markov jump dynamics.
+- [UPT-11: Continuum Limit and Model-Level Observables](docs/UPT_ELEVEN_CONTINUUM_LIMIT.md) — constructs a periodic 1-D continuum gradient flow, defines mean/variance/memory observables, and tests finite-difference refinement.
