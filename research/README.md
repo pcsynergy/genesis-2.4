@@ -99,3 +99,6 @@ The manuscript integration is documentation-first. It does not change GENESIS si
 
 - [Symphony 5.5 Milestone E: Multi-start thresholds and local/global coherence](docs/SYMPHONY_5_5_MILESTONE_E_THRESHOLDS.md) — 384-run deterministic grid over topology, frequency dispersion, coupling, and initial phase configurations; reports global and local edge observables.
 - Run `python research/examples/symphony_harmonic_thresholds.py` for the Milestone E sweep.
+
+- [Symphony 5.5 Milestone F: Numerical stability and convergence](docs/SYMPHONY_5_5_MILESTONE_F_NUMERICS.md) — compares Euler and RK4, refines time steps, and probes relaxation of a perturbed complete graph.
+- Run `python research/examples/symphony_harmonic_numerics.py` for the Milestone F numerical checks.
