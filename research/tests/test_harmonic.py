@@ -26,7 +26,7 @@ class PhaseOscillatorNetworkTests(unittest.TestCase):
 
     def test_coupling_increases_coherence_for_equal_frequency_spread_state(self):
         n = 8
-        phases = [2 * pi * i / n for i in range(n)]
+        phases = [0.0, 0.2, 0.8, 1.7, 2.1, 3.4, 4.8, 5.5]
         frequencies = [1.0] * n
         model = PhaseOscillatorNetwork(complete_graph(n), phases, frequencies, 1.0)
         initial = model.order_parameter()
