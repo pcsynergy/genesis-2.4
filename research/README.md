@@ -102,3 +102,6 @@ The manuscript integration is documentation-first. It does not change GENESIS si
 
 - [Symphony 5.5 Milestone F: Numerical stability and convergence](docs/SYMPHONY_5_5_MILESTONE_F_NUMERICS.md) — compares Euler and RK4, refines time steps, and probes relaxation of a perturbed complete graph.
 - Run `python research/examples/symphony_harmonic_numerics.py` for the Milestone F numerical checks.
+
+- [Symphony 5.5 Milestone G: Analytical linear stability](docs/SYMPHONY_5_5_MILESTONE_G_STABILITY.md) — computes Jacobian spectra for synchronized and twisted states and tests transverse stability.
+- Run `python research/examples/symphony_harmonic_stability.py` for the Milestone G stability analysis.
