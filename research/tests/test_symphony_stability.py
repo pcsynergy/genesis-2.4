@@ -36,9 +36,9 @@ class SymphonyStabilityTests(unittest.TestCase):
         self.assertEqual(classify_transverse_stability(eig), "linearly_asymptotically_stable")
         self.assertLess(max(x for x in eig if abs(x) > 1e-9), 0.0)
 
-    def test_ring_q2_twist_is_linearly_unstable_for_n10(self):
+    def test_ring_q3_twist_is_linearly_unstable_for_n10(self):
         n, k = 10, 1.0
-        phases = [4*pi*i/n for i in range(n)]
+        phases = [6*pi*i/n for i in range(n)]
         eig = symmetric_eigenvalues(phase_jacobian(phases, ring(n), k))
         self.assertEqual(classify_transverse_stability(eig), "linearly_unstable")
         self.assertGreater(max(eig), 0.0)
