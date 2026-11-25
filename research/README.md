@@ -90,3 +90,6 @@ These are mathematical experiments, not validated physical field theories. Exper
 - [Symphony 5.5 evidence register](docs/SYMPHONY_5_5_EVIDENCE_REGISTER.md) — initial separation of established background, model assumptions, mathematical results, interpretation, speculation, and open verification tasks.
 
 The manuscript integration is documentation-first. It does not change GENESIS simulator sources or alter existing mathematical models. The index is a working navigation aid; verify exact printed-page placement before formal citation. The evidence register is initial triage, not a completed line-by-line fact-check.
+
+- [Symphony 5.5 Milestone C: Harmonic Creation Experiment](docs/SYMPHONY_5_5_MILESTONE_C_HARMONIC_EXPERIMENT.md) — Kuramoto-style phase synchronization, coherence observable, numerical setup, and scientific limitations.
+- Run `python research/examples/symphony_harmonic_creation.py` for the coupling-strength comparison.
