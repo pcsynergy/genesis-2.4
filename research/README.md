@@ -105,3 +105,7 @@ The manuscript integration is documentation-first. It does not change GENESIS si
 
 - [Symphony 5.5 Milestone G: Analytical linear stability](docs/SYMPHONY_5_5_MILESTONE_G_STABILITY.md) — computes Jacobian spectra for synchronized and twisted states and tests transverse stability.
 - Run `python research/examples/symphony_harmonic_stability.py` for the Milestone G stability analysis.
+
+
+- [Symphony 5.5 Milestone H: Null-model comparison](docs/SYMPHONY_5_5_MILESTONE_H_NULL_COMPARISON.md) — compares coupled and uncoupled predictions over four fixed initial conditions; explicitly documents the model-level scope and falsification path.
+- Run `python research/examples/symphony_harmonic_null_comparison.py` for the Milestone H null comparison.
