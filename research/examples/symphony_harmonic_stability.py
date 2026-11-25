@@ -28,7 +28,7 @@ def main():
     cases = [
         ("complete_synchronized", [0.0] * N, complete_graph(N)),
         ("ring_q1_twist", [2*pi*i/N for i in range(N)], ring_graph(N)),
-        ("ring_q2_twist", [4*pi*i/N for i in range(N)], ring_graph(N)),
+        ("ring_q3_twist", [6*pi*i/N for i in range(N)], ring_graph(N)),
     ]
     for name, phases, adjacency in cases:
         eig = symmetric_eigenvalues(phase_jacobian(phases, adjacency, K))
