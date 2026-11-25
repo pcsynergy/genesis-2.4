@@ -1,4 +1,8 @@
 """Run the UPT-16 governing-principle compatibility demonstration."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from one_time_field.upt16_unified_principle import classify_common_energy_compatibility
 
 
