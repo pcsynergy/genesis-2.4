@@ -82,3 +82,11 @@ These are mathematical experiments, not validated physical field theories. Exper
 - [UPT-9: Reversibility, Memory, and Thermodynamic Consistency](docs/UPT_NINE_REVERSIBILITY_MEMORY.md) — an 80-state reversible Markov model tests probability conservation, detailed balance, memory dependence, and adaptive admissibility.
 - [UPT-10: Variational Relational-Memory Dynamics](docs/UPT_TEN_ACTION_PRINCIPLE.md) — derives a dissipative graph-field and memory flow from an Onsager/Rayleighian principle, with explicit distinction from conservative action and Markov jump dynamics.
 - [UPT-11: Continuum Limit and Model-Level Observables](docs/UPT_ELEVEN_CONTINUUM_LIMIT.md) — constructs a periodic 1-D continuum gradient flow, defines mean/variance/memory observables, and tests finite-difference refinement.
+
+## Symphony 5.5 manuscript integration
+
+- [Symphony 5.5 → GENESIS map](docs/SYMPHONY_5_5_GENESIS_MAP.md) — manuscript-to-project architecture and implementation milestones.
+- [Symphony 5.5 manuscript index](docs/SYMPHONY_5_5_MANUSCRIPT_INDEX.md) — working page/heading navigation for the 346-page manuscript.
+- [Symphony 5.5 evidence register](docs/SYMPHONY_5_5_EVIDENCE_REGISTER.md) — initial separation of established background, model assumptions, mathematical results, interpretation, speculation, and open verification tasks.
+
+The manuscript integration is documentation-first. It does not change GENESIS simulator sources or alter existing mathematical models. The index is a working navigation aid; verify exact printed-page placement before formal citation. The evidence register is initial triage, not a completed line-by-line fact-check.
