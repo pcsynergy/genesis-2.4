@@ -96,3 +96,6 @@ The manuscript integration is documentation-first. It does not change GENESIS si
 
 - [Symphony 5.5 Milestone D: Topology and Robustness](docs/SYMPHONY_5_5_MILESTONE_D_ROBUSTNESS.md) — compares complete, path, and ring graphs across frequency dispersion and coupling strengths.
 - Run `python research/examples/symphony_harmonic_robustness.py` for the topology and frequency-dispersion sweep.
+
+- [Symphony 5.5 Milestone E: Multi-start thresholds and local/global coherence](docs/SYMPHONY_5_5_MILESTONE_E_THRESHOLDS.md) — 384-run deterministic grid over topology, frequency dispersion, coupling, and initial phase configurations; reports global and local edge observables.
+- Run `python research/examples/symphony_harmonic_thresholds.py` for the Milestone E sweep.
