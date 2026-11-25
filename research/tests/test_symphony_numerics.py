@@ -14,9 +14,9 @@ W = [1.0 + 0.02*(i-2.5) for i in range(N)]
 class SymphonyNumericsTests(unittest.TestCase):
     def test_rk4_refinement_reduces_error_against_fine_reference(self):
         ref = integrate(Y, A, W, 1.1, 0.000625, 16000, "rk4")
-        coarse = integrate(Y, A, W, 0.02, 1.1, 500, "rk4")
-        medium = integrate(Y, A, W, 0.01, 1.1, 1000, "rk4")
-        fine = integrate(Y, A, W, 0.005, 1.1, 2000, "rk4")
+        coarse = integrate(Y, A, W, 1.1, 0.02, 500, "rk4")
+        medium = integrate(Y, A, W, 1.1, 0.01, 1000, "rk4")
+        fine = integrate(Y, A, W, 1.1, 0.005, 2000, "rk4")
         self.assertGreater(phase_error(ref, coarse), phase_error(ref, medium))
         self.assertGreater(phase_error(ref, medium), phase_error(ref, fine))
 
