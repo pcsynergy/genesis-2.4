@@ -93,3 +93,6 @@ The manuscript integration is documentation-first. It does not change GENESIS si
 
 - [Symphony 5.5 Milestone C: Harmonic Creation Experiment](docs/SYMPHONY_5_5_MILESTONE_C_HARMONIC_EXPERIMENT.md) — Kuramoto-style phase synchronization, coherence observable, numerical setup, and scientific limitations.
 - Run `python research/examples/symphony_harmonic_creation.py` for the coupling-strength comparison.
+
+- [Symphony 5.5 Milestone D: Topology and Robustness](docs/SYMPHONY_5_5_MILESTONE_D_ROBUSTNESS.md) — compares complete, path, and ring graphs across frequency dispersion and coupling strengths.
+- Run `python research/examples/symphony_harmonic_robustness.py` for the topology and frequency-dispersion sweep.
